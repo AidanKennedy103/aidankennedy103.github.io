@@ -20,6 +20,6 @@
 </head>
 <body>
     <h1>GitHub Pages Test</h1>
-    <p>Congratulations! Your GitHub Pages website is working.</p>
+    <p>Congratulations! Your GitHub Pages website is running and working.</p>
 </body>
 </html>
