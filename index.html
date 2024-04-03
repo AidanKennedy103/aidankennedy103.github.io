@@ -10,8 +10,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between; /* Ensure equal spacing between buttons */
-            margin-top: 50px; /* Add some top margin for spacing */
-            gap: 100px; /* Gap between buttons */
+            margin-top: 100px; /* Add some top margin for spacing */
             margin-left: 80px;
             margin-right: 80px;
         }
@@ -24,15 +23,16 @@
 
         /* Style for button-text */
         .button-text {
-            margin-left: 20px; /* Adjust margin between button and text */
+            margin-left: 50px; /* Adjust margin between button and text */
         }
 
-        .button-container .button-link:nth-child(odd) {
-            align-self: flex-start; /* Align odd buttons to the left */
+        /* Aligning the buttons alternately */
+        .button-container:nth-child(odd) .button-text-container {
+            justify-content: flex-start; /* Align text to the left for odd containers */
         }
 
-        .button-container .button-link:nth-child(even) {
-            align-self: flex-end; /* Align even buttons to the right */
+        .button-container:nth-child(even) .button-text-container {
+            justify-content: flex-end; /* Align text to the right for even containers */
         }
 
         /* Style the links to look like buttons */
@@ -77,12 +77,11 @@
         }
 
         .button-link:hover span {
-            color: white; /* Change text color on hover */
+            color: rgb(0, 0, 0); /* Change text color on hover */
         }
 
         /* Background */
         body {
-            /* background-image: url("/WebBackground.jpg"); */
             color: #000000; /* Sets the text color to black for better visibility on the background */
             background-color: #959595be;
             margin: 0;
@@ -93,7 +92,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website! We are currently under construction...</h1>
+        <center><h1>Welcome to My Website! We are currently under construction...</h1></center>
     </header>
 
     <main>
@@ -103,8 +102,14 @@
                 <a class="button-link project1" href="/project1"><span>Project 1 Link</span></a>
                 <span class="button-text">In this project I....</span>
             </div>
-            <!-- Button 2 -->
-            <a class="button-link project2" href="/project2"><span>Project 2 Link</span></a>
+        </div>
+
+        <!-- Button 2 and Text Container -->
+        <div class="button-container">
+            <div class="button-text-container">
+                <a class="button-link project2" href="/project2"><span>Project 2 Link</span></a>
+                <!-- <span class="button-text">In this project I....</span> -->
+            </div>
         </div>
 
         <p id="text">Congratulations! Your website is working.</p>
