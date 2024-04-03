@@ -5,10 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <style>
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Ensure equal spacing between buttons */
+            margin-top: 50px; /* Add some top margin for spacing */
+            gap: 100px; /* Gap between buttons */
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+
+        /* Style for button-text container */
+        .button-text-container {
+            display: flex;
+            align-items: center; /* Vertically center the content */
+        }
+
+        /* Style for button-text */
+        .button-text {
+            margin-left: 20px; /* Adjust margin between button and text */
+        }
+
+        .button-container .button-link:nth-child(odd) {
+            align-self: flex-start; /* Align odd buttons to the left */
+        }
+
+        .button-container .button-link:nth-child(even) {
+            align-self: flex-end; /* Align even buttons to the right */
+        }
+
         /* Style the links to look like buttons */
         .button-link {
             display: inline-block;
-            padding: 110px 140px;
+            padding: 150px 200px;
             text-decoration: none;
             border: none;
             border-radius: 15px;
@@ -17,6 +47,7 @@
             font-family: Arial, sans-serif; /* Set font family */
             font-size: 20px; /* Set font size */
             font-weight: 600;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Add transition effect */
         }
 
         /* Set different backgrounds for buttons */
@@ -39,10 +70,23 @@
             font-size: 16px; /* Set font size for text inside button */
         }
 
+        /* Hover effect */
+        .button-link:hover {
+            background-color: #534e4ebf; /* Change background color on hover */
+            transform: scale(1.1); /* Scale the button to 110% of its original size */
+        }
+
+        .button-link:hover span {
+            color: white; /* Change text color on hover */
+        }
+
         /* Background */
         body {
-            background-image: url("/WebBackground.jpg");
+            /* background-image: url("/WebBackground.jpg"); */
             color: #000000; /* Sets the text color to black for better visibility on the background */
+            background-color: #959595be;
+            margin: 0;
+            padding: 0;
         }
 
     </style>
@@ -51,11 +95,20 @@
     <header>
         <h1>Welcome to My Website! We are currently under construction...</h1>
     </header>
+
     <main>
+        <!-- Button 1 and Text Container -->
+        <div class="button-container">
+            <div class="button-text-container">
+                <a class="button-link project1" href="/project1"><span>Project 1 Link</span></a>
+                <span class="button-text">In this project I....</span>
+            </div>
+            <!-- Button 2 -->
+            <a class="button-link project2" href="/project2"><span>Project 2 Link</span></a>
+        </div>
+
         <p id="text">Congratulations! Your website is working.</p>
-        <a class="button-link project1" href="/project1"><span>Project 1 Link</span></a>
-        <a class="button-link project2" href="/project2"><span>Project 2 Link</span></a>
     </main>
-    <script src="script.js"></script>
+
 </body>
 </html>
