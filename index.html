@@ -8,26 +8,43 @@
         /* Style the links to look like buttons */
         .button-link {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
+            padding: 110px 140px;
             text-decoration: none;
             border: none;
-            border-radius: 5px;
+            border-radius: 15px;
             cursor: pointer;
+            color: white; /* Set text color to white */
+            font-family: Arial, sans-serif; /* Set font family */
+            font-size: 20px; /* Set font size */
+            font-weight: 600;
         }
 
-        .button-link:hover {
-            background-color: #0056b3;
+        /* Set different backgrounds for buttons */
+        .button-link.project1 {
+            background-image: url('/FanModuleButton.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .button-link.project2 {
+            background-image: url('/223Button.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Style the text inside the buttons */
+        .button-link span {
+            color: black; /* Set text color inside button */
+            font-family: Arial, sans-serif; /* Set font family for text inside button */
+            font-size: 16px; /* Set font size for text inside button */
         }
 
         /* Background */
         body {
-            background-image: url('C:\Users\aidan\OneDrive\Desktop\Portfolio\WebBackground');
-            background-size: cover; /* Adjusts the background image to cover the entire viewport */
-            background-position: center; /* Centers the background image */
-            color: #fff; /* Sets the text color to white for better visibility on the background */
+            background-image: url("/WebBackground.jpg");
+            color: #000000; /* Sets the text color to black for better visibility on the background */
         }
+
     </style>
 </head>
 <body>
@@ -36,8 +53,8 @@
     </header>
     <main>
         <p id="text">Congratulations! Your website is working.</p>
-        <a class="button-link" href="/project1">Project 1 Link</a>
-        <a class="button-link" href="/project2">Project 2 Link</a>
+        <a class="button-link project1" href="/project1"><span>Project 1 Link</span></a>
+        <a class="button-link project2" href="/project2"><span>Project 2 Link</span></a>
     </main>
     <script src="script.js"></script>
 </body>
