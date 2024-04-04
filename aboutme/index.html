@@ -36,18 +36,37 @@
 
         /* Style for the photo container */
         .photo-container {
-            position: fixed; /* Fix the container position */
-            top: 20px; /* Adjust the top position */
-            right: 20px; /* Adjust the right position */
-            z-index: 999; /* Ensure the photo appears above other content */
+            position: relative; /* Relative positioning */
+            width: 100%; /* Full width */
+            margin-top: 5%;
         }
 
-        /* Style for the photo */
+        /* Ensure photos maintain aspect ratio */
         .photo {
-            width: 200px; /* Adjust the width */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 15px;
+            width: 100%;
+            height: auto;
         }
+
+        /* Styles for second photo and text container */
+        .second-photo-text-container {
+            display: flex; /* Use flexbox to arrange items horizontally */
+            justify-content: space-between; /* Space items evenly along the main axis */
+            align-items: center; /* Center items vertically */
+            margin-top: 20px; /* Add some top margin for spacing */
+        }
+
+        /* Styles for second photo container */
+        .second-photo-container {
+            width: 40%; /* Set width to 40% of the container */
+            margin-right: 5%; /* Offset from the right edge by 5% */
+        }
+
+        /* Styles for text box container */
+        .text-box-container {
+            width: 40%; /* Set width to 40% of the container */
+            margin-left: 5%; /* Offset from the left edge by 5% */
+        }
+        
     </style>
 </head>
 <body>
@@ -57,9 +76,25 @@
         <a class="top-left-button" href="/">Home</a>
     </div>
 
-    <!-- Photo container -->
+    <!-- Container for second photo and text -->
+    <div class="second-photo-text-container">
+        <!-- Text box container -->
+        <div class="text-box-container">
+            <p>Hello! My name is Aidan Kennedy and I am a Mechanical Engineering student at the University of British Columbia. 
+I have a passion for working on challenging problems and searching for creative and robust solutions. I am a first-
+principles focused student, who loves taking on challenging design problems especially in a team environment.
+You can usually find me working with other students at my University to design and build electric race-cars with UBC Formula Electric,
+spending time with friends, or in the machine shops!</p>
+        </div>
+        <!-- Second photo container -->
+        <div class="second-photo-container">
+            <img class="photo" src="/FEHeadshot.jpg" alt="Your Second Photo">
+        </div>
+    </div>
+
+    <!-- First photo container -->
     <div class="photo-container">
-        <img class="photo" src="AboutMePhoto.JPG" alt="Your Photo">
+        <img class="photo" src="/CarDriving.jpg" alt="Your Photo">
     </div>
 
 </body>
