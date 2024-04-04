@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project 1 taadaa</title>
-        <style>
-            /* Style the links to look like buttons */
-            .button-link {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #007bff;
-                color: #fff;
-                text-decoration: none;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-    
-            .button-link:hover {
-                background-color: #0056b3;
-            }
-        </style>
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 taadaa</title>
+    <style>
+        /* Style for the button container */
+        .top-left-button-container {
+            position: fixed; /* Fix the container position */
+            top: 20px; /* Adjust the top position */
+            left: 20px; /* Adjust the left position */
+            z-index: 999; /* Ensure the button appears above other content */
+        }
+
+        /* Style the link to look like a button */
+        .top-left-button {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding */
+            text-decoration: none;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            color: white; /* Set text color to white */
+            background-color: #000000; /* Set background color */
+            font-family: Arial, sans-serif; /* Set font family */
+            font-size: 16px; /* Set font size */
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+        }
+
+        /* Hover effect */
+        .top-left-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for the photo container */
+        .photo-container {
+            position: fixed; /* Fix the container position */
+            top: 20px; /* Adjust the top position */
+            right: 20px; /* Adjust the right position */
+            z-index: 999; /* Ensure the photo appears above other content */
+        }
+
+        /* Style for the photo */
+        .photo {
+            width: 200px; /* Adjust the width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
-    <p>Project 1</p>
-    <a class="button-link" href="/">Click Here to Go Home</a>
+
+    <!-- About Me button container -->
+    <div class="top-left-button-container">
+        <a class="top-left-button" href="/">Home</a>
+    </div>
+
+    <!-- Photo container -->
+    <div class="photo-container">
+        <img class="photo" src="AboutMePhoto.JPG" alt="Your Photo">
+    </div>
+
 </body>
 </html>
