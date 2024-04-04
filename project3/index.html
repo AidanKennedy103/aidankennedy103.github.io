@@ -1,180 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        /* Style for the button container */
-        .top-right-button-container {
-            position: fixed; /* Fix the container position */
-            top: 20px; /* Adjust the top position */
-            right: 20px; /* Adjust the right position */
-            z-index: 999; /* Ensure the button appears above other content */
-        }
-
-        /* Style the link to look like a button */
-        .top-right-button {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust padding */
-            text-decoration: none;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            color: white; /* Set text color to white */
-            background-color: #000000; /* Set background color */
-            font-family: Arial, sans-serif; /* Set font family */
-            font-size: 16px; /* Set font size */
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s; /* Add transition effect */
-        }
-
-        /* Hover effect */
-        .top-right-button:hover {
-            background-color: #383838; /* Change background color on hover */
-        }
-
-        /* Background */
-        body {
-            color: #000000; /* Sets the text color to black for better visibility on the background */
-            background-color: #959595be;
-            margin: 0;
-            padding: 0;
-            height: 2000px; /* Add some height for scrolling demonstration */
-        }
-
-        /* Center align the header */
-        header {
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Style for the button container */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Ensure equal spacing between buttons */
-            margin-top: 100px; /* Add some top margin for spacing */
-            margin-left: 80px;
-            margin-right: 80px;
-        }
-
-        /* Style for button-text container */
-        .button-text-container {
-            display: flex;
-            align-items: center; /* Vertically center the content */
-        }
-
-        /* Style for button-text */
-        .button-text {
-            margin-left: 50px; /* Adjust margin between button and text */
-        }
-
-        /* Aligning the buttons alternately */
-        .button-container:nth-child(odd) .button-text-container {
-            justify-content: flex-start; /* Align text to the left for odd containers */
-        }
-
-        .button-container:nth-child(even) .button-text-container {
-            justify-content: flex-end; /* Align text to the right for even containers */
-        }
-
-        /* Style the links to look like buttons */
-        .button-link {
-            display: inline-block;
-            padding: 150px 200px;
-            text-decoration: none;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            color: white; /* Set text color to white */
-            font-family: Arial, sans-serif; /* Set font family */
-            font-size: 20px; /* Set font size */
-            font-weight: 600;
-            transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Add transition effect */
-        }
-
-        /* Set different backgrounds for buttons */
-        .button-link.project1 {
-            background-image: url('/FanModuleButton.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .button-link.project2 {
-            background-image: url('/CoolLoopButton.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .button-link.project3 {
-            background-image: url('/223Button.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .button-link.AboutMe {
-            background-color: #585858;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Style the text inside the buttons */
-        .button-link span {
-            color: black; /* Set text color inside button */
-            font-family: Arial, sans-serif; /* Set font family for text inside button */
-            font-size: 16px; /* Set font size for text inside button */
-        }
-
-        /* Hover effect */
-        .button-link:hover {
-            background-color: #534e4ebf; /* Change background color on hover */
-            transform: scale(1.1); /* Scale the button to 110% of its original size */
-        }
-
-        .button-link:hover span {
-            color: rgb(0, 0, 0); /* Change text color on hover */
-        }
-
-    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project TEST</title>
+        <style>
+            /* Style the links to look like buttons */
+            .button-link {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            .button-link:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website! We are currently under construction...</h1>
-    </header>
-
-    <main>
-        <!-- Button 1 and Text Container -->
-        <div class="button-container">
-            <div class="button-text-container">
-                <a class="button-link project1" href="/project1"><span>Project 1 Link</span></a>
-                <span class="button-text">In this project I....</span>
-            </div>
-        </div>
-
-        <!-- Button 2 and Text Container -->
-        <div class="button-container">
-            <div class="button-text-container">
-                <a class="button-link project2" href="/project2"><span>Project 2 Link</span></a>
-                <!-- <span class="button-text">In this project I....</span> -->
-            </div>
-        </div>
-
-        <!-- Button 3 and Text Container -->
-        <div class="button-container">
-            <div class="button-text-container">
-                <a class="button-link project3" href="/project3"><span>Project 3 Link</span></a>
-                <!-- <span class="button-text">In this project I....</span> -->
-            </div>
-        </div>
-
-        <!-- About Me button container -->
-        <div class="top-right-button-container">
-            <a class="top-right-button" href="/new-page">About Me</a>
-        </div>
-
-        <p id="text">Congratulations! Your website is working.</p>
-    </main>
-
+    <p>Project 2</p>
+    <a class="button-link" href="/">Click Here to Go Home</a>
 </body>
 </html>
