@@ -4,185 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <style>
-        /* Style for the button container */
-        .top-right-button-container {
-            position: fixed; /* Fix the container position */
-            top: 2%; /* Adjust the top position */
-            right: 2%; /* Adjust the right position */
-            z-index: 999; /* Ensure the button appears above other content */
-        }
-
-        /* Style the About Me button to match the size of the Home button */
-        .top-right-button {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust padding */
-            text-decoration: none;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            color: white; /* Set text color to white */
-            background-color: #000000; /* Set background color */
-            font-family: Arial, sans-serif; /* Set font family */
-            font-size: 16px; /* Adjust font size */
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s; /* Add transition effect */
-        }
-
-        /* Hover effect */
-        .top-right-button:hover {
-            background-color: #383838; /* Change background color on hover */
-        }
-
-        /* Background */
-        body {
-            color: #000000; /* Sets the text color to black for better visibility on the background */
-            background-color: #ffffffbe;
-            margin: 0;
-            padding: 0;
-            height: 200%; /* Add some height for scrolling demonstration */
-        }
-
-        /* Center align the header */
-        header {
-            text-align: center;
-            /* padding: 100px;  */
-            margin-top: 40px;
-            margin-left: 20%; /* Adjust left margin */
-            margin-right: 20%; /* Adjust right margin */
-        }
-
-        /* Style for the button container */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Ensure equal spacing between buttons */
-            margin-top: 5%; /* Add some top margin for spacing */
-            margin-left: 5%;
-            margin-right: 5%;
-        }
-
-        /* Style for button-text container */
-        .button-text-container {
-            display: flex;
-            align-items: center; /* Vertically center the content */
-        }
-
-            .button-text {
-            margin-left: 5%; /* Adjust margin between button and text */
-            margin-right: 5%;
-            font-size: 1.75vw; /* Adjust font size */
-            color: #333; /* Change font color */
-            /* Add more styles as needed */
-        }
-
-        /* Aligning the buttons alternately */
-        .button-container:nth-child(odd) .button-text-container {
-            justify-content: flex-start; /* Align text to the left for odd containers */
-        }
-
-        .button-container:nth-child(even) .button-text-container {
-            justify-content: flex-end; /* Align text to the right for even containers */
-        }
-
-        /* Style the links to look like buttons */
-        .button-link {
-            display: inline-block;
-            padding: 13.8% 18%; /* Adjust padding */
-            text-decoration: none;
-            border: 1px solid black;
-            border-radius: 0.2vw; 
-            cursor: pointer;
-            color: white; /* Set text color to white */
-            font-family: Arial, sans-serif; /* Set font family */
-            font-size: 1.6vw; /* Adjust font size */
-            font-weight: 600;
-            transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Add transition effect */
-
-        }
-
-        /* Set different backgrounds for buttons */
-        .button-link.project1 {
-            background-image: url('/FanModuleButton.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .button-link.project2 {
-            background-image: url('/CoolLoopButton.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .button-link.project3 {
-            background-image: url('/223Button.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .button-link.AboutMe {
-            background-color: #585858;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Style the text inside the buttons */
-        .button-link span {
-            color: black; /* Set text color inside button */
-            font-family: Arial, sans-serif; /* Set font family for text inside button */
-            font-size: 1.3vw; /* Adjust font size */
-        }
-
-        /* Hover effect */
-        .button-link:hover {
-            background-color: #534e4ebf; /* Change background color on hover */
-            transform: scale(1.1); /* Scale the button to 110% of its original size */
-        }
-
-        /* .button-link:hover span {
-            color: rgb(0, 0, 0); 
-        } */
-
-    </style>
+    <link rel="stylesheet" href="main.css">
+    
 </head>
+
+
+<!-- HEADER BUTTONS ==================================== -->
+<div class="head-button-right-container">
+    <a class="head-button head-button-right" href="/aboutme">About Me</a>
+</div>
+
+<div class="head-button-middle-container">
+    <a class="head-button head-button-middle" href="/https://www.linkedin.com/in/aidankennedyengineering/" target="_blank">My Linkedin</a>
+</div>
+
+<div class="head-button-left-container">
+    <a class="head-button head-button-left" href="/aboutme">My Resume</a>
+</div>
+
+
+<!-- Top 85px container =================================-->
+<div class="top-85px"></div>
+
+
+<!-- HEADER  =========================================== -->
 <body>
     <header>
         <h1>Aidan Kennedy is a mechanical engineer who blah blah blah...</h1>
     </header>
 
-    <main>
-        <!-- Button 1 and Text Container -->
-        <div class="button-container">
-            <div class="button-text-container">
-                <a class="button-link project1" href="/project1"><span>Project 1 Link</span></a>
-                <span class="button-text">Positive pressure battery pack cooling system, graded to IP-54 specifications, designed to uniformly cool 6 separate battery pack segments, using SolidWorks, FEA flow simulations fabricated metal and 3D-printed parts
-                </span>
+<!-- PROJECT PHOTO AND TEXT  ================================= -->
+
+    <div class = "grid-container">
+
+
+        <div class = "grid-item flex-container">
+            <a href="/project1" style="width: 100%; height: 100%">
+                <div class="project-link project1">
+                    <span></span>
+                </div>
+            </a>
+        </div>
+
+
+        <div class = "grid-item flex-container">
+            <div class = "text1">Positive pressure battery pack cooling system, graded to IP-54 specifications, 
+                designed to uniformly cool 6 separate battery pack segments, using SolidWorks, FEA flow simulations 
+                fabricated metal and 3D-printed parts
             </div>
         </div>
 
-        <!-- Button 2 and Text Container -->
-        <div class="button-container">
-            <div class="button-text-container">
-                <a class="button-link project2" href="/project2"><span>Project 2 Link</span></a>
-                <!-- <span class="button-text">In this project I....</span> -->
-            </div>
+
+        <div class = "grid-item">
+            <div class = "text1">Liquid cooling system designed to remove an average of 806W
+                from a student FSAE car. System is optimized to maintain component temperatures 
+                between 30 and 60 degrees on an 80KW peak output drivetrain.
+            </div> 
         </div>
 
-        <!-- Button 3 and Text Container -->
-        <div class="button-container">
-            <div class="button-text-container">
-                <a class="button-link project3" href="/project3"><span>Project 3 Link</span></a>
-                <!-- <span class="button-text">In this project I....</span> -->
-            </div>
+
+        <div class = "grid-item">
+            <a href="/project2" style="width: 100%; height: 100%">
+                <div class="project-link project2">
+                    <span></span>
+                </div>
+            </a>
         </div>
 
-        <!-- About Me button container -->
-        <div class="top-right-button-container">
-            <a class="top-right-button" href="/aboutme">About Me</a>
+
+        <div class = "grid-item">
+            <a href="/project2" style="width: 100%; height: 100%">
+                <div class="project-link project3">
+                    <span></span>
+                </div>
+            </a>
         </div>
 
-        <p id="text">Congratulations! Your website is working.</p>
-    </main>
 
-</body>
-</html>
+        <div class = "grid-item">
+            <div class = "text1">In second year mechanical engineering my team was tasked with
+                designing an assembly that would launch a vehicle across a large playing surface.
+                The vehicle then shoots a ball towards a gravity well. This project was meant to 
+                simulate a moon lander launch to send a probe onto a planet. I thought the scenario
+                was a bit of a stretch but that is more a question of the curriculum.
+            </div> 
+        </div>
+        
+        
+    </div>
+
+    

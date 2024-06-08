@@ -1,0 +1,181 @@
+/*GRID ==================== Define a grid to organize the layout*/
+.grid-container{
+    max-width: 90%;
+    height: 90vw;
+    margin: 1vw;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5vw;
+
+}
+
+.grid-item{
+    display: flex;
+    /* background-color: lightgray; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/*FLEXBOX ================= */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+   flex: 1;
+}
+
+.flex-item1 {
+    background-color: lightblue;
+    flex: 100%;
+}
+
+.flex-item2 {
+    background-color: lightgoldenrodyellow;
+}
+
+.flex-item3 {
+    background-color: lightgreen;
+}
+
+.flex-item4 {
+    /*background-image: url(FanModuleButton.jpg);
+    background-size: cover; */
+
+}
+
+
+
+
+/* BUTTONS ================== */
+.project-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    color: white; /* Set text color to white */
+    font-family: Arial, sans-serif; /* Set font family */
+    font-size: 1.6vw; /* Adjust font size */
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.project-link:hover {
+    /* background-color: #555; */
+    /* color: #fff; */
+    transform: scale(1.1); /* Scale up the button on hover */
+}
+
+
+.project1 {
+    background-image: url('/FanModuleButton.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.project2 {
+    background-image: url('/CoolLoopButton.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.project3 {
+    background-image: url('/223Button.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/*Text Conditions ========================= */
+
+.text1{
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    display: grid;
+    place-items: center;
+    margin-top: 6vw;
+}
+
+
+
+/* HEADER BUTTONS ============================== */
+
+
+/* Style */
+.head-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Hover effect */
+.head-button:hover {
+    background-color: #383838;
+}
+
+/* Location */
+.head-button-right-container {
+    position: fixed; 
+    top: 2%; 
+    right: 2%; 
+    z-index: 999; 
+}
+
+/* Location */
+.head-button-middle-container {
+    position: fixed; 
+    top: 2%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index: 999; 
+}
+
+/* Location */
+.head-button-left-container {
+    position: fixed; 
+    top: 2%; 
+    left: 2%; 
+    z-index: 999; 
+}
+
+
+/*Top 85px container =================================*/
+.top-85px {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px; /* Adjusted to 85px */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 65px, rgba(255, 255, 255, 0) 85px); /* Gradient from full white to transparent */
+    z-index: 998; /* Ensure the top 85px appears below the button */
+    pointer-events: none; /* Avoid blocking interactions */
+}
