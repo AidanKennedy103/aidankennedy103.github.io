@@ -1,31 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project 1 taadaa</title>
-        <style>
-            /* Style the links to look like buttons */
-            .button-link {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #007bff;
-                color: #fff;
-                text-decoration: none;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-    
-            .button-link:hover {
-                background-color: #0056b3;
-            }
-        </style>
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <p>Project 1</p>
-    <a class="button-link" href="/">Click Here to Go Home</a>
+
+<!-- HEADER BUTTONS ==================================== -->
+<div class="head-button-left-container">
+    <a class="head-button head-button-left" href="/">Home</a>
+</div>
+
+<!-- HEADER  =========================================== -->
+<header>
+    <h1>Problem Definition</h1>
+</header>
+
+<!-- PROJECT PHOTO AND TEXT  ================================= -->
+
+<div class="grid-container">
+
+    <div class="grid-item">
+        <img src="Accumulator.jpg">
+    </div>
+
+    <div class="grid-item flex-container">
+        <div class="text1">To improve the performance and longevity of our battery pack I designed 
+            an integrated convection cooling system by flowing ambient air over the busbars of our battery pack.
+            The design intends to cool the busbars as well as the "PCM" or "Power Control Module" which steps
+            the 400V pack down to 24V to run the LV bus on our car. The PCM is located in the front ancillary area
+            shown in the photo. Small vents were placed at the front corners of the pack to allow air to flow over 
+            the busbars and down through the ancillary area before it flows out of the pack.
+        </div>
+    </div>
+
+    <div class="grid-item">
+        <div class="text1">The accumulator (Battery Pack) has 6 segments that are connected in series. To avoid 
+            differences between the segments and cells the design had to cool the segments uniformly. From previous analysis
+            we knew needed a minimum of 30CFM to flow through the accumulator at approximately 50Pa. We also had previously set
+            an ingress protection rating of IP54 as a standard for any vents on the accumulator.
+        </div> 
+    </div>
+
+    <div class="grid-item">
+        <img src="Segment.jpg">
+    </div>
+
+    <div class="grid-item">
+        <img src="ExplodedViewDWG.JPG">
+    </div>
+
+    <!-- PROJECT PHOTO AND TEXT  ================================= -->
+
+    <div class="grid-item">
+        <div class="text1">Mounting this project was specifically difficult. The accumulator and chassis designs had already
+            been finalized before the start of this design, and there were no fans with the required fan curve that could fit
+            on the pack during installation into the chassis. This is problematic as the battery pack is removed often for charging
+            and repairs. I came up with a system in which the fan module would be tucked into the chassis before the pack was installed
+            and fastened in place afterwards. This drove me to choose to mount threaded studs onto the pack and have the mounting screws
+            drop in vertically where we would actually have room to fit a wrench. The final part also contains alignment features to make
+            the on-car installation easier.
+        </div> 
+    </div>
+
+    <div class="grid-item">
+        <div class="text1">The plan was to 3D print the part since it had highly complex geometry,
+            would see little load, and needed to remain lightweight. During the installation there is 
+            a high likelihood of hitting or pinching the module so we decided to do a SLA resin print 
+            to increase the overall rigidity of the part.
+        </div>
+    </div>
+
+    <div class="grid-item">
+        <img src="SectionViewDWG.JPG">
+    </div>
+
+    <div class="grid-item">
+        <img src="FullCADAssembly.jpg">
+    </div>
+
+    <div class="grid-item">
+        <img src="SideAngle.jpg">
+    </div>
+
+    <div class="grid-item">
+        <img src="ExplodedView.jpg">
+    </div>
+
+    <div class="grid-item">
+        <img src="Section View.jpg">
+    </div>
+
+</div>
+
 </body>
 </html>
