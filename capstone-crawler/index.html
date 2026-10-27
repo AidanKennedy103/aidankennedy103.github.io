@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetic Inspection Crawler — Aidan Kennedy</title>
+    <meta name="description" content="An in-progress MECH 45X capstone project: a tethered magnetic crawler that carries DarkVision's Gen 3 ultrasound imaging heads across steel pipes and plates.">
+    <meta property="og:image" content="https://aidankennedyengineering.com/capstone-crawler/images/02-concept-a-pivot.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+
+<!-- HERO ================================================================ -->
+<section class="case-hero">
+    <div class="wrap">
+        <a class="back mono" href="/#work">← All projects</a><br>
+        <span class="eyebrow mono">Project 02 · MECH 45X Capstone</span><span class="badge">In progress</span>
+        <h1>Magnetic Inspection Crawler (Capstone, In Progress)</h1>
+        <p class="lede">For our MECH 45X capstone, our team of six is designing a robotic crawler for DarkVision Technologies. It will carry their Gen 3 ultrasound imaging heads across steel infrastructure for demos and trade shows.</p>
+
+        <dl class="specs">
+            <div><dt class="mono">Sponsor</dt><dd style="font-size: 1.15rem;">DarkVision Technologies</dd></div>
+            <div><dt class="mono">Team</dt><dd>6<small>engineers</small></dd></div>
+            <div><dt class="mono">Status</dt><dd style="font-size: 1.15rem;">Concept generation</dd></div>
+        </dl>
+    </div>
+</section>
+
+<section class="wrap">
+
+    <!-- 01 GOALS ======================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">01</span>
+            <h2>Goals &amp; requirements</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>The crawler needs to carry the imaging heads across steel pipes and flat plates in horizontal, vertical and inverted orientations, while holding the heads at a constant height off the surface. We broke this down into four main functions: attach to the structure, traverse it, control the imaging head standoff, and accept user control.</p>
+                <h3 style="margin-top: 32px;">Pass/fail requirements</h3>
+                <p>We built the requirements from DarkVision's project brief, our meetings with their engineering team, and our own research. Every concept has to meet all of them before it gets scored. The key requirements and targets are:</p>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th scope="col">Requirement</th><th scope="col">Target</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Traverse ferrous steel (pipe and plate) in 2 axes</td><td>Axial and circumferential motion on steel surfaces down to a 230mm radius</td></tr>
+                        <tr><td>Operate in any orientation</td><td>No slip or detachment at full payload</td></tr>
+                        <tr><td>Fail safe on power loss, with an e-stop</td><td>No detachment when power is cut</td></tr>
+                        <tr><td>Cross discontinuities (rivets, seams)</td><td>Obstacles up to 6mm high</td></tr>
+                        <tr><td>Carry 1–4 imaging heads with adjustable standoff</td><td>10–50mm standoff, held to ±0.1mm once set</td></tr>
+                        <tr><td>Positional accuracy</td><td>100µm over 20mm of travel</td></tr>
+                        <tr><td>Operate near the water coupler</td><td>IP67</td></tr>
+                        <tr><td>Electrical power</td><td>Runs from a 120V, 15A (1.8kW) 60Hz wall outlet</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="figs">
+                <figure class="fig">
+                    <button type="button"><img src="images/01-function-structure.jpg" alt="Function structure diagram: four main functions in a column (attach to structure, traverse structure, control head standoff, accept user control), with traverse branching into stop and brake at power cut, monitor positional accuracy, steer and overcome obstacles, and standoff branching into overcome obstacles and move head up and down" loading="lazy" width="1344" height="936"></button>
+                    <figcaption><span class="mono">Fig 1</span>Function structure: the four main functions and their sub-functions</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02 EVALUATION CRITERIA ========================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">02</span>
+            <h2>Evaluation criteria</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>Concepts that pass every requirement are compared with a weighted value equation built from seven evaluation criteria:</p>
+                <p class="mono" style="font-size: 0.92rem; text-transform: none; letter-spacing: 0;">Value = 0.25x₁ + 0.05x₂ + 0.20x₃ + 0.15x₄ + 0.15x₅ + 0.15x₆ + 0.05x₇</p>
+                <p>Each concept's estimate for a criterion is converted to a score from 0 to 1 using that criterion's evaluation curve, and the scores are then combined with the weights below. Concepts that fail any pass/fail requirement aren't scored.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th scope="col">Criterion</th><th scope="col">Metric</th><th scope="col" class="num">Weight</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>x₁ Constant standoff over curvature</td><td>±0.1mm on a 230mm curvature radius</td><td class="num">25%</td></tr>
+                        <tr><td>x₂ Traverse speed</td><td>50mm/s proposed, higher is better</td><td class="num">5%</td></tr>
+                        <tr><td>x₃ Positional accuracy</td><td>100µm over 20mm of travel</td><td class="num">20%</td></tr>
+                        <tr><td>x₄ Friction tolerance</td><td>Works at µ ≥ 0.2 on 1018 brushed steel</td><td class="num">15%</td></tr>
+                        <tr><td>x₅ Design simplicity</td><td>Part count, assembly complexity, off-the-shelf vs custom</td><td class="num">15%</td></tr>
+                        <tr><td>x₆ Path efficiency</td><td>Imaging time / (traverse + imaging time)</td><td class="num">15%</td></tr>
+                        <tr><td>x₇ BOM cost</td><td>$5,000 or lower</td><td class="num">5%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="figs">
+                <figure class="fig">
+                    <button type="button"><img src="images/05-evaluation-curves.png" alt="Seven evaluation curves mapping each criterion to a 0–100% score: standoff and positional error score 100% up to 50µm and fall to 50% at 100µm, then zero; friction tolerance is an S-curve through 50% at µ = 0.2; design simplicity rises linearly with a 1–10 rating; path efficiency is an S-curve through 50% at 80%; traverse speed jumps to 50% at 50mm/s and reaches 100% at 200mm/s; BOM cost scores 100% up to $5k and falls to zero at $10k" loading="lazy" width="1638" height="2048"></button>
+                    <figcaption><span class="mono">Fig 2</span>Evaluation curves that turn each criterion into a 0–100% score</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- 03 CONCEPTS ===================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">03</span>
+            <h2>Concepts</h2>
+        </div>
+        <div>
+            <div class="subsection">
+                <div class="prose">
+                    <p>We sketched three concepts and compared them against our weighted evaluation criteria. Constant standoff over curvature and positional accuracy carry the most weight.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Concept A: Pivot</h3>
+                    <p>Large magnetic wheels to roll over obstacles and a spine pivot with passive roll/pitch and active yaw. Each wheel has a non-backdrivable worm gearbox, so the crawler holds position when power is cut. The imaging heads sit on a lever arm mount, and height is set with shims. It has a robust drivetrain and simple steering, but head height is manual and there's no active obstacle compensation.</p>
+                </div>
+                <div class="figs">
+                    <figure class="fig">
+                        <button type="button"><img src="images/02-concept-a-pivot.jpg" alt="Hand sketch of Concept A: a two-part chassis joined at a central pivot with an active yaw motor, four large magnet wheels with worm-drive motors, a tether carrying power, data and water, and the DarkVision imaging heads on a lever arm mount at the front, with shims for height adjustment" loading="lazy" width="1473" height="968"></button>
+                        <figcaption><span class="mono">Fig 3</span>Concept A: Pivot</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Concept B: Crab</h3>
+                    <p>Every wheel is its own steerable drive module, so the crawler can move axially and circumferentially on a pipe without turning its body. The imaging heads sit on a central mount with linear suspension. It's symmetric and simple to steer, but scanning coverage and imaging head configurations are more limited.</p>
+                </div>
+                <div class="figs">
+                    <figure class="fig">
+                        <button type="button"><img src="images/03-concept-b-crab.jpg" alt="Hand sketch of Concept B: a flat rectangular chassis on four magnet wheels, each with its own drive motor and a belt-driven turning mechanism about a vertical axis, the imaging heads in a central opening with height adjustment, and side views showing the wheels turned for two directions of travel" loading="lazy" width="1776" height="816"></button>
+                        <figcaption><span class="mono">Fig 4</span>Concept B: Crab</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Concept C: Tank</h3>
+                    <p>Magnet-embedded treads give the largest contact area and the highest attraction force to the surface. The imaging sled has actuated height control, and the wheels have independent suspension. It offers the most electronic control over the imaging head, but it's the most complex to manufacture, and the treads risk detaching.</p>
+                </div>
+                <div class="figs">
+                    <figure class="fig">
+                        <button type="button"><img src="images/04-concept-c-tank.jpg" alt="Hand sketch of Concept C: a tracked crawler with two magnet treads, four drive motors, a spring tensioner and z-axis wheel linkages, towing an imaging sled on contact rollers that holds the DarkVision imaging heads, with two head height control motors" loading="lazy" width="1536" height="1044"></button>
+                        <figcaption><span class="mono">Fig 5</span>Concept C: Tank</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04 PROGRESS LOG ================================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">04</span>            <h2>Progress log</h2>
+        </div>
+        <div class="prose">
+            <!-- Newest first. Copy an <li> block for each update. -->
+            <ul class="log">
+                <li>
+                    <time class="mono" datetime="2026-10">Oct 2026</time>
+                    <h3>Concept generation (current)</h3>
+                    <p>We've defined our requirements and evaluation criteria and generated three candidate concepts. Next, we'll run key function tests and select an architecture for review with DarkVision in mid-November, before moving into detailed design.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- NEXT ================================================================ -->
+<section class="wrap" style="padding-bottom: 72px;">
+    <a class="next" href="/project1/">
+        <div>
+            <span class="mono" style="color: var(--muted);">Next project · 03</span>
+            <h3>Battery Pack Cooling System</h3>
+        </div>
+        <span class="arrow">→</span>
+    </a>
+</section>
+
+</main>
+
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/aboutme/">About</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>
