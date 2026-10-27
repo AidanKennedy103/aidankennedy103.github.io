@@ -3,131 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1 taadaa</title>
-    <style>
-        /* Style for the button container */
-        .top-left-button-container {
-            position: fixed; /* Fix the container position */
-            top: 20px; /* Adjust the top position */
-            left: 20px; /* Adjust the left position */
-            z-index: 999; /* Ensure the button appears above other content */
-        }
-
-        /* Style the link to look like a button */
-        .top-left-button {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust padding */
-            text-decoration: none;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            color: white; /* Set text color to white */
-            background-color: #000000; /* Set background color */
-            font-family: Arial, sans-serif; /* Set font family */
-            font-size: 16px; /* Set font size */
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s; /* Add transition effect */
-        }
-        
-        /* Hover effect */
-        .top-left-button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Style for the main content container */
-        .main-content {
-            padding-top: 85px; /* Offset the top 85px */
-        }
-
-        /* Style for the photo container */
-        .photo-container {
-            position: relative; /* Relative positioning */
-            width: 100%; /* Full width */
-            margin-top: 5%;
-        }
-
-        /* Ensure photos maintain aspect ratio */
-        .photo {
-            width: 100%;
-            height: auto;
-        }
-
-        /* Styles for second photo and text container */
-        .second-photo-text-container {
-            display: flex; /* Use flexbox to arrange items horizontally */
-            justify-content: space-between; /* Space items evenly along the main axis */
-            align-items: center; /* Center items vertically */
-            margin-top: 3%; /* Add some top margin for spacing */
-        }
-
-        /* Styles for second photo container */
-        .second-photo-container {
-            width: 40%; /* Set width to 40% of the container */
-            margin-right: 5%; /* Offset from the right edge by 5% */
-        }
-
-        /* Styles for text box container */
-        .text-box-container {
-            width: 55%; /* Set width to 55% of the container */
-            margin-right: 5%; /* Offset from the right edge by 5% */
-            font-size: 1.75vw;
-        }
-
-        /* Style for the top 85px */
-        .top-85px {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 85px; /* Adjusted to 85px */
-            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 65px, rgba(255, 255, 255, 0) 85px); /* Gradient from full white to transparent */
-            z-index: 998; /* Ensure the top 85px appears below the button */
-            pointer-events: none; /* Avoid blocking interactions */
-        }
-    </style>
+    <title>About — Aidan Kennedy</title>
+    <meta name="description" content="About Aidan Kennedy, a mechanical engineer from UBC and member of UBC Formula Electric.">
+    <meta property="og:image" content="https://aidankennedyengineering.com/FEHeadshot.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
 
-    <!-- Top 85px container -->
-    <div class="top-85px"></div>
-
-    <!-- About Me button container -->
-    <div class="top-left-button-container">
-        <a class="top-left-button" href="/">Home</a>
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/" aria-current="page">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
     </div>
+</header>
 
-    <!-- Main content container -->
-    <div class="main-content">
-        <!-- Container for second photo and text -->
-        <div class="second-photo-text-container">
-            <!-- Text box container -->
-            <div class="text-box-container">
-                <p>Hello! My name is Aidan Kennedy and I am a Mechanical Engineering student at the University of British Columbia. 
-                I have a passion for working on challenging problems and searching for creative and robust solutions. I am a first-principles 
-                focused student, who loves taking on challenging design problems especially in a team environment.
-                You can usually find me working with other students at my University to design and build electric race-cars with UBC Formula Electric,
-                spending time with friends, or in the machine shops!</p>
+<main>
+
+<!-- INTRO =============================================================== -->
+<section class="hero about-hero">
+    <div class="wrap">
+        <div>
+            <span class="eyebrow mono">About me</span>
+            <h1>Hi, I'm Aidan.</h1>
+            <div class="prose">
+                <p>I'm a Mechanical Engineering student at the University of British Columbia. I'm passionate about challenging problems and about finding creative, robust solutions to them. I work from first principles, and I like hard design problems best when I'm tackling them with a team.</p>
+                <p>You can usually find me designing and building electric race cars with UBC Formula Electric, spending time with friends, or in the machine shop.</p>
             </div>
-            <!-- Second photo container -->
-            <div class="second-photo-container">
-                <img class="photo" src="/FEHeadshot.jpg" alt="Your Second Photo">
+            <div class="btn-row">
+                <a class="btn" href="/Resume/Resume.pdf" target="_blank" rel="noopener">View resume <span class="arrow">→</span></a>
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
+        <figure class="frame">
+            <img src="/FEHeadshot.jpg" alt="Portrait of Aidan Kennedy in a UBC Formula Electric polo" width="1487" height="1500">
+        </figure>
+    </div>
+</section>
 
-        <!-- First photo container -->
-        <div class="photo-container">
-            <img class="photo" src="/CarDriving.jpg" alt="Your Photo">
+<!-- HOW I WORK ========================================================== -->
+<section class="section">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <span class="eyebrow mono">How I work</span>
+                <h2>What I bring to a team</h2>
+            </div>
+        </div>
+        <div class="facts reveal">
+            <div class="fact">
+                <span class="mono">01</span>
+                <h3>First principles</h3>
+                <p>I start from the physics, from heat loads and pressure drops to fan curves, before I pick parts or open CAD.</p>
+            </div>
+            <div class="fact">
+                <span class="mono">02</span>
+                <h3>CAD as communication</h3>
+                <p>I push for parametric, top-down modelling so that one engineer's changes carry cleanly into the whole assembly.</p>
+            </div>
+            <div class="fact">
+                <span class="mono">03</span>
+                <h3>Test, then trust</h3>
+                <p>When vendor data is thin, I test it myself, in the wind tunnel or on the track, and feed the results back into the model.</p>
+            </div>
+            <div class="fact">
+                <span class="mono">04</span>
+                <h3>Built to be serviced</h3>
+                <p>I design for the people who install and maintain the part, not just for the drawing.</p>
+            </div>
         </div>
     </div>
+</section>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            var topButton = document.querySelector('.top-left-button-container');
+<!-- PHOTOS ============================================================== -->
+<section class="section">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <span class="eyebrow mono">On track</span>
+                <h2>UBC Formula Electric</h2>
+            </div>
+            <a class="btn btn-ghost" href="/#work">See projects <span class="arrow">→</span></a>
+        </div>
+        <div class="photo-band reveal">
+            <img src="/CompPic-web.jpg" alt="UBC Formula Electric car at the start line at competition" loading="lazy" width="2400" height="1350">
+            <img src="/CarDriving.jpg" alt="UBC Formula Electric car driving an autocross course" loading="lazy" width="1618" height="993">
+        </div>
+    </div>
+</section>
 
-            // Ensure button is always fully visible
-            topButton.style.opacity = 1;
-        });
-    </script>
+</main>
 
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/#work">Work</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="/site.js"></script>
 </body>
 </html>

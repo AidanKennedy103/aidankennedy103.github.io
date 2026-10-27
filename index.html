@@ -3,95 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="main.css">
-    
+    <title>Aidan Kennedy — Mechanical Engineer</title>
+    <meta name="description" content="Portfolio of Aidan Kennedy, a mechanical engineer working on thermal and mechanical systems for UBC Formula Electric.">
+    <meta property="og:title" content="Aidan Kennedy — Mechanical Engineer">
+    <meta property="og:description" content="Thermal and mechanical design for electric race cars.">
+    <meta property="og:image" content="https://aidankennedyengineering.com/CarDriving.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
 </head>
-
-
-<!-- HEADER BUTTONS ==================================== -->
-<div class="head-button-right-container">
-    <a class="head-button head-button-right" href="/aboutme">About Me</a>
-</div>
-
-<div class="head-button-middle-container">
-    <a class="head-button head-button-middle" href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank">My Linkedin</a>
-</div>
-
-<div class="head-button-left-container">
-    <a class="head-button head-button-left" href="/Resume/Resume.pdf">My Resume</a>
-</div>
-
-
-<!-- Top 85px container =================================-->
-<div class="top-85px"></div>
-
-
-<!-- HEADER  =========================================== -->
 <body>
-    <header style="text-align: center;">
-        <h1>Aidan Kennedy is a mechanical engineer who loves working on complex problems alongside a motivated team</h1>
-    </header>
-</body>
 
-<!-- PROJECT PHOTO AND TEXT  ================================= -->
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+    </div>
+</header>
 
-    <div class = "grid-container">
+<main>
 
-
-        <div class = "grid-item flex-container">
-            <a href="/project1" style="width: 100%; height: 100%">
-                <div class="project-link project1">
-                    <span></span>
-                </div>
-            </a>
+<!-- HERO ================================================================ -->
+<section class="hero">
+    <div class="wrap">
+        <div>
+            <span class="eyebrow mono">Mechanical Engineer · UBC Formula Electric</span>
+            <h1>Aidan Kennedy<span class="accent">.</span></h1>
+            <p class="lede">I love working on complex problems alongside a motivated team, from first-principles analysis through CAD, testing and the machine shop.</p>
+            <div class="btn-row">
+                <a class="btn" href="#work">See my work <span class="arrow">→</span></a>
+                <a class="btn btn-ghost" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            </div>
         </div>
+        <figure class="frame">
+            <img src="/CarDriving.jpg" alt="UBC Formula Electric car driving through an autocross course" width="1618" height="993">
+            <figcaption class="mono"><span>UBC Formula Electric</span><span>Autocross testing</span></figcaption>
+        </figure>
+    </div>
+</section>
 
-
-        <div class = "grid-item flex-container">
-            <div class = "text1">Positive pressure battery pack cooling system, graded to IP-54 specifications, 
-                designed to uniformly cool 6 separate battery pack segments, using SolidWorks, FEA flow simulations 
-                fabricated metal and 3D-printed parts
+<!-- PROJECTS ============================================================ -->
+<section class="section" id="work">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <span class="eyebrow mono">Selected work</span>
+                <h2>Projects</h2>
             </div>
         </div>
 
+        <div class="projects">
 
-        <div class = "grid-item">
-            <div class = "text1">Liquid cooling system designed to remove an average of 806W
-                from a student FSAE car. System is optimized to maintain component temperatures 
-                between 30 and 60 degrees on an 80KW peak output drivetrain.
-            </div> 
-        </div>
-
-
-        <div class = "grid-item">
-            <a href="/project2" style="width: 100%; height: 100%">
-                <div class="project-link project2">
-                    <span></span>
+            <a class="project-card reveal" href="/fsae-motor/">
+                <div class="thumb">
+                    <img src="/fsae-motor/images/07-reduced-stator-model.png" alt="Ansys Maxwell model of the front motor cross-section, showing the stator slots and spoke rotor magnets" loading="lazy">
+                </div>
+                <div class="body">
+                    <div class="meta mono"><span class="num">01</span><span class="badge">In progress</span></div>
+                    <h3>Motor Design</h3>
+                    <p>Custom spoke-type permanent magnet motors for a 4WD FSAE car, with 16kW continuous front hub motors and 33kW continuous rear inboard motors. Sized from vehicle-level torque and speed requirements and validated in Ansys Maxwell, where the first front motor design delivered 11.4Nm at 25A RMS against a 10.9Nm continuous target.</p>
+                    <ul class="tags">
+                        <li>Motor design</li><li>Electromagnetics</li><li>Thermal</li>
+                    </ul>
+                    <span class="go">Follow the project <span class="arrow">→</span></span>
                 </div>
             </a>
-        </div>
 
-
-        <div class = "grid-item">
-            <a href="/project3/MECH 223 Final Report.pdf" style="width: 100%; height: 100%">
-                <div class="project-link project3">
-                    <span></span>
+            <a class="project-card reveal" href="/project1/">
+                <div class="thumb">
+                    <img src="/project1/SideAngle.jpg" alt="CAD render of the battery pack fan module" loading="lazy">
+                </div>
+                <div class="body">
+                    <div class="meta mono"><span class="num">02</span><span>Formula Electric</span></div>
+                    <h3>Battery Pack Cooling System</h3>
+                    <p>A positive-pressure cooling system for the accumulator. It is sealed to IP54 and cools all six battery segments evenly, using fabricated metal and SLA-printed parts.</p>
+                    <ul class="tags">
+                        <li>SolidWorks</li><li>CFD flow sim</li><li>SLA printing</li><li>IP54</li>
+                    </ul>
+                    <span class="go">Read case study <span class="arrow">→</span></span>
                 </div>
             </a>
-        </div>
 
+            <a class="project-card reveal" href="/project2/">
+                <div class="thumb">
+                    <img src="/project2/FullTopend.jpg" alt="CAD render of the rear of the car showing motors, inverters and radiator" loading="lazy">
+                </div>
+                <div class="body">
+                    <div class="meta mono"><span class="num">03</span><span>Formula Electric</span></div>
+                    <h3>Drivetrain Liquid Cooling Loop</h3>
+                    <p>A liquid cooling loop that removes an average of 806&nbsp;W from an 80&nbsp;kW peak drivetrain and keeps the motors and inverters between 30 and 60&nbsp;°C through Endurance.</p>
+                    <ul class="tags">
+                        <li>Thermal modelling</li><li>Wind tunnel testing</li><li>Pump sizing</li><li>Validation</li>
+                    </ul>
+                    <span class="go">Read case study <span class="arrow">→</span></span>
+                </div>
+            </a>
 
-        <div class = "grid-item">
-            <div class = "text1">In second year mechanical engineering my team was tasked with
-                designing an assembly that would launch a vehicle across a large playing surface.
-                The vehicle then shoots a ball towards a gravity well. This project was meant to 
-                simulate a moon lander launch to send a probe onto a planet. I thought the scenario
-                was a bit of a stretch but that is more a question of the curriculum.
-            </div> 
+            <a class="project-card reveal" href="/project3/MECH%20223%20Final%20Report.pdf" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img class="contain" src="/223Button.jpg" alt="Engineering drawing of the launcher and vehicle assembly" loading="lazy">
+                </div>
+                <div class="body">
+                    <div class="meta mono"><span class="num">04</span><span>MECH 223 · UBC</span></div>
+                    <h3>Launcher &amp; Lander Vehicle</h3>
+                    <p>A second-year team design project: an assembly that launches a vehicle across a large playing surface, which then fires a ball toward a gravity well, simulating a lander deploying a probe.</p>
+                    <ul class="tags">
+                        <li>Mechanism design</li><li>Team project</li><li>Drawings</li>
+                    </ul>
+                    <span class="go">Read the report (PDF) <span class="arrow">→</span></span>
+                </div>
+            </a>
+
         </div>
-        
-        
     </div>
+</section>
 
-    
+<!-- EXPERIENCE ========================================================== -->
+<section class="section" id="experience">
+    <div class="wrap">
+        <div class="section-head">
+            <div>
+                <span class="eyebrow mono">Industry</span>
+                <h2>Experience</h2>
+            </div>
+        </div>
+
+        <div class="note reveal">
+            <span class="note-icon">i</span>
+            <div>
+                <h3>A note on co-op work</h3>
+                <p>Everything under Projects comes from student teams, coursework and personal work. <strong>None of it is from my co-op or internship placements</strong>, which are covered by non-disclosure agreements. Instead, each role below links to a technical reflection on the problems, tools and lessons from that role, with no proprietary detail.</p>
+            </div>
+        </div>
+
+        <ul class="timeline reveal">
+            <li><a href="/experience/darkvision/">
+                <span class="when mono">Jan – Jun 2026</span>
+                <div><h3>Mechanical Engineering Intern</h3><div class="where">DarkVision Technologies · Vancouver, BC</div><div class="where">Micro-CNC: 40&nbsp;h → 8&nbsp;h per part</div></div>
+                <span class="go">Reflection →</span>
+            </a></li>
+            <li><a href="/experience/h3x/">
+                <span class="when mono">Sep – Dec 2025</span>
+                <div><h3>Mechanical Engineering Intern</h3><div class="where">H3X Technologies · Colorado, USA</div><div class="where">HPDM-500 inverter integration</div></div>
+                <span class="go">Reflection →</span>
+            </a></li>
+            <li><a href="/experience/tesla/">
+                <span class="when mono">Jan – Aug 2025</span>
+                <div><h3>Drive Inverter Mechanical Design Intern</h3><div class="where">Tesla · Palo Alto, CA</div><div class="where">Semiconductor lifetime analysis testing</div></div>
+                <span class="go">Reflection →</span>
+            </a></li>
+            <li><a href="/experience/boron/">
+                <span class="when mono">May – Sep 2024</span>
+                <div><h3>Mechanical Engineering Intern</h3><div class="where">Boron Energy · Vancouver, BC</div><div class="where">Drivetrain dynamometer for an 8&nbsp;kW GaN inverter</div></div>
+                <span class="go">Reflection →</span>
+            </a></li>
+            <li><a href="/experience/standardaero/">
+                <span class="when mono">May – Dec 2023</span>
+                <div><h3>Mechanical Engineering Co-op</h3><div class="where">StandardAero Helicopters · Langley, BC</div><div class="where">Tail boom frame fitting: ~$44k saved per rebuild</div></div>
+                <span class="go">Reflection →</span>
+            </a></li>
+            <li><a href="/experience/newgrind/">
+                <span class="when mono">Mar 2021 – Sep 2022</span>
+                <div><h3>Research and Design Assistant</h3><div class="where">Newgrind Inc. · Coquitlam, BC</div><div class="where">Prototype builds and field testing</div></div>
+                <span class="go">Reflection →</span>
+            </a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ABOUT =============================================================== -->
+<section class="section">
+    <div class="wrap about-strip reveal">
+        <figure class="frame">
+            <img src="/FEHeadshot.jpg" alt="Portrait of Aidan Kennedy" loading="lazy" width="1487" height="1500">
+        </figure>
+        <div>
+            <span class="eyebrow mono">About</span>
+            <h2>First principles, built by a team.</h2>
+            <p>I'm a mechanical engineer from the University of British Columbia. I like hard design problems and finding creative, robust answers to them. Most of my time goes into designing and building electric race cars with UBC Formula Electric, or into the machine shop.</p>
+            <div class="btn-row">
+                <a class="btn btn-ghost" href="/aboutme/">More about me <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/aboutme/">About</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>

@@ -3,97 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Battery Pack Cooling System — Aidan Kennedy</title>
+    <meta name="description" content="Design of an IP54 positive-pressure cooling system for the UBC Formula Electric battery pack.">
+    <meta property="og:image" content="https://aidankennedyengineering.com/project1/SideAngle.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
 
-<!-- HEADER BUTTONS ==================================== -->
-<div class="head-button-left-container">
-    <a class="head-button head-button-left" href="/">Home</a>
-</div>
-
-<!-- HEADER  =========================================== -->
-<header>
-    <h1>Problem Definition</h1>
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+    </div>
 </header>
 
-<!-- PROJECT PHOTO AND TEXT  ================================= -->
+<main>
 
-<div class="grid-container">
+<!-- HERO ================================================================ -->
+<section class="case-hero">
+    <div class="wrap">
+        <a class="back mono" href="/#work">← All projects</a><br>
+        <span class="eyebrow mono">Project 02 · UBC Formula Electric</span>
+        <h1>Battery Pack Cooling System</h1>
+        <p class="lede">An integrated convection cooling system for the accumulator. Ambient air flows over the busbars and the Power Control Module, cools all six segments evenly, and the pack stays sealed to IP54.</p>
 
-    <div class="grid-item">
-        <img src="Accumulator.jpg">
+        <dl class="specs">
+            <div><dt class="mono">Airflow</dt><dd>≥30<small>CFM</small></dd></div>
+            <div><dt class="mono">Static pressure</dt><dd>~50<small>Pa</small></dd></div>
+            <div><dt class="mono">Ingress rating</dt><dd>IP54</dd></div>
+            <div><dt class="mono">Segments cooled</dt><dd>6<small>in series</small></dd></div>
+        </dl>
+
+        <figure class="frame case-cover">
+            <img src="FullCADAssembly.jpg" alt="Full CAD assembly of the fan module mounted to the battery pack" width="1782" height="830">
+            <figcaption class="mono"><span>Fan module</span><span>Full CAD assembly</span></figcaption>
+        </figure>
     </div>
+</section>
 
-    <div class="grid-item flex-container">
-        <div class="text1">To improve the performance and longevity of our battery pack I designed 
-            an integrated convection cooling system by flowing ambient air over the busbars of our battery pack.
-            The design intends to cool the busbars as well as the "PCM" or "Power Control Module" which steps
-            the 400V pack down to 24V to run the LV bus on our car. The PCM is located in the front ancillary area
-            shown in the photo. Small vents were placed at the front corners of the pack to allow air to flow over 
-            the busbars and down through the ancillary area before it flows out of the pack.
+<!-- 01 PROBLEM ========================================================== -->
+<section class="wrap">
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">01</span>
+            <h2>Problem definition</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>To improve the performance and longevity of our battery pack, I designed an integrated convection cooling system that flows ambient air over the pack's busbars. It also cools the <strong>Power Control Module (PCM)</strong>, which steps the 400&nbsp;V pack down to 24&nbsp;V for the car's low-voltage bus. The PCM sits in the front ancillary area. Small vents at the front corners of the pack let air flow over the busbars and down through the ancillary area before it leaves the pack.</p>
+                <p>The accumulator has six segments connected in series. To avoid differences between segments and cells, the design had to cool them uniformly. Earlier analysis showed we needed at least <strong>30&nbsp;CFM at about 50&nbsp;Pa</strong> through the accumulator, and the team had already set <strong>IP54</strong> as the standard for any vent on it.</p>
+            </div>
+            <div class="figs two">
+                <figure class="fig small">
+                    <button type="button"><img src="Accumulator.jpg" alt="Accumulator layout showing the front ancillary area" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 1</span>Accumulator layout and front ancillary area</figcaption>
+                </figure>
+                <figure class="fig small">
+                    <button type="button"><img src="Segment.jpg" alt="A single battery segment" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 2</span>One of six series-connected segments</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 
-    <div class="grid-item">
-        <div class="text1">The accumulator (Battery Pack) has 6 segments that are connected in series. To avoid 
-            differences between the segments and cells the design had to cool the segments uniformly. From previous analysis
-            we knew needed a minimum of 30CFM to flow through the accumulator at approximately 50Pa. We also had previously set
-            an ingress protection rating of IP54 as a standard for any vents on the accumulator.
-        </div> 
-    </div>
-
-    <div class="grid-item">
-        <img src="Segment.jpg">
-    </div>
-
-    <div class="grid-item">
-        <img src="ExplodedViewDWG.JPG">
-    </div>
-
-    <!-- PROJECT PHOTO AND TEXT  ================================= -->
-
-    <div class="grid-item">
-        <div class="text1">Mounting this project was specifically difficult. The accumulator and chassis designs had already
-            been finalized before the start of this design, and there were no fans with the required fan curve that could fit
-            on the pack during installation into the chassis. This is problematic as the battery pack is removed often for charging
-            and repairs. I came up with a system in which the fan module would be tucked into the chassis before the pack was installed
-            and fastened in place afterwards. This drove me to choose to mount threaded studs onto the pack and have the mounting screws
-            drop in vertically where we would actually have room to fit a wrench. The final part also contains alignment features to make
-            the on-car installation easier.
-        </div> 
-    </div>
-
-    <div class="grid-item">
-        <div class="text1">The plan was to 3D print the part since it had highly complex geometry,
-            would see little load, and needed to remain lightweight. During the installation there is 
-            a high likelihood of hitting or pinching the module so we decided to do a SLA resin print 
-            to increase the overall rigidity of the part.
+    <!-- 02 MOUNTING ===================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">02</span>
+            <h2>Mounting &amp; serviceability</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>Mounting was the hardest part of this project. The accumulator and chassis designs were already final when I started, and no fan with the required fan curve could stay on the pack while it was installed into the chassis. That matters because the pack comes out often for charging and repairs.</p>
+                <p>My solution tucks the fan module into the chassis <em>before</em> the pack goes in, then fastens it in place afterward. So I mounted threaded studs on the pack and made the mounting screws drop in vertically, where there is actually room for a wrench. The final part also has alignment features to make installation on the car easier.</p>
+            </div>
+            <div class="figs">
+                <figure class="fig">
+                    <button type="button"><img src="ExplodedViewDWG.JPG" alt="Exploded-view assembly drawing of the fan module with bill of materials" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 3</span>Exploded assembly drawing with bill of materials</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 
-    <div class="grid-item">
-        <img src="SectionViewDWG.JPG">
+    <!-- 03 MANUFACTURING ================================================ -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">03</span>
+            <h2>Manufacturing</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>The geometry was complex, the part would carry little load, and it needed to stay light, so 3D printing was the plan from the start. Installation brings a high chance of hitting or pinching the module, so we chose an <strong>SLA resin print</strong> to make the part more rigid overall.</p>
+            </div>
+            <div class="figs">
+                <figure class="fig">
+                    <button type="button"><img src="SectionViewDWG.JPG" alt="Section view drawing of the fan module" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 4</span>Section view drawing</figcaption>
+                </figure>
+            </div>
+        </div>
     </div>
 
-    <div class="grid-item">
-        <img src="FullCADAssembly.jpg">
+    <!-- 04 FINAL DESIGN ================================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">04</span>
+            <h2>Final design</h2>
+        </div>
+        <div>
+            <div class="figs two">
+                <figure class="fig">
+                    <button type="button"><img src="SideAngle.jpg" alt="Front render of the fan module" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 5</span>Front view</figcaption>
+                </figure>
+                <figure class="fig">
+                    <button type="button"><img src="ExplodedView.jpg" alt="Exploded render of the fan module" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 6</span>Exploded render</figcaption>
+                </figure>
+            </div>
+            <div class="figs" style="margin-top: 18px;">
+                <figure class="fig">
+                    <button type="button"><img src="Section%20View.jpg" alt="Section render showing the airflow path through the module" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 7</span>Section render through the module</figcaption>
+                </figure>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="grid-item">
-        <img src="SideAngle.jpg">
+<!-- NEXT ================================================================ -->
+<section class="wrap" style="padding-bottom: 72px;">
+    <a class="next" href="/project2/">
+        <div>
+            <span class="mono" style="color: var(--muted);">Next project · 03</span>
+            <h3>Drivetrain Liquid Cooling Loop</h3>
+        </div>
+        <span class="arrow">→</span>
+    </a>
+</section>
+
+</main>
+
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/aboutme/">About</a>
+        </nav>
     </div>
+</footer>
 
-    <div class="grid-item">
-        <img src="ExplodedView.jpg">
-    </div>
-
-    <div class="grid-item">
-        <img src="Section View.jpg">
-    </div>
-
-</div>
-
+<script src="/site.js"></script>
 </body>
 </html>

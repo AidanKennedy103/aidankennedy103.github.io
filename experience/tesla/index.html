@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla — Aidan Kennedy</title>
+    <meta name="description" content="A technical reflection on my time as Drive Inverter Mechanical Design Intern at Tesla.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#experience" aria-current="page">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+
+<!-- HERO ================================================================ -->
+<section class="case-hero">
+    <div class="wrap">
+        <a class="back mono" href="/#experience">← All experience</a><br>
+        <span class="eyebrow mono">Experience · Tesla</span>
+        <h1>Drive Inverter Mechanical Design Intern</h1>
+        <p class="lede">At Tesla, I worked on the inverter team, focusing mainly on the research, design and testing of mechanical packaging for semiconductors. It pushed me to dig into electrical design, materials science and failure analysis, areas where I had less experience before.</p>
+
+        <ul class="tags" style="margin-top: 22px;">
+            <li>PCBA design</li>
+            <li>Failure analysis</li>
+            <li>Electrical systems design</li>
+        </ul>
+
+        <dl class="specs">
+            <div><dt class="mono">Dates</dt><dd style="font-size: 1.15rem;">Jan 2025 – Aug 2025</dd></div>
+            <div><dt class="mono">Duration</dt><dd style="font-size: 1.15rem;">8 months</dd></div>
+            <div><dt class="mono">Location</dt><dd style="font-size: 1.15rem;">Palo Alto, CA</dd></div>
+            <div><dt class="mono">Focus</dt><dd style="font-size: 1.15rem;">Semiconductor packaging</dd></div>
+        </dl>
+    </div>
+</section>
+
+<section class="wrap">
+
+    <div class="note" style="margin-bottom: 8px;">
+        <span class="note-icon">i</span>
+        <div>
+            <h3>About this reflection</h3>
+            <p>My work at Tesla is covered by a non-disclosure agreement, so this page has no designs, drawings or data. It describes the work at a high level and what I took away from it.</p>
+        </div>
+    </div>
+
+    <!-- 01 PROJECT EXAMPLE ============================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">01 · Project example</span>
+            <h2>Semiconductor lifetime analysis testing</h2>
+        </div>
+        <div class="prose">
+            <p>Semiconductor failures are notoriously difficult to characterize, especially since they can be impossible to detect through non-destructive testing. The failure rate of Tesla's semiconductor devices (TPAKs) is very low, but production volume is so high that failures still matter. One failed TPAK means replacing the entire inverter. It also causes a loss of HV isolation, a Vehicle Off Road (VOR) failure that forces the driver to pull over immediately.</p>
+            <p>To tackle this, I spent extensive time creating a protocol to artificially generate TPAK failures that matched what we were seeing in the field. Using those failed units, I began developing a characterization test that could catch failures that previously would have passed the manufacturing process. The test relied on the steady state of a high-voltage polarization test, which wasn't yet viable for a production line. I also supplied other engineers with artificially failed TPAKs so they could test in parallel.</p>
+            <p>I then designed PCBs that mechanically clamp these devices and hold them at high voltage during environmental stress tests such as high temperature/high humidity and thermal shock. The results helped shape future tests and how testing might be integrated into the production line.</p>
+        </div>
+    </div>
+
+    <!-- 02 TEAM & REFLECTION ============================================ -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">02</span>
+            <h2>Team &amp; reflection</h2>
+        </div>
+        <div class="prose">
+            <p>What I really enjoyed about Tesla was the availability of resources. I was interested in running tests on the semiconductors that would be prohibitively expensive at most companies. Tesla already had so much equipment and expertise that I could usually complete these projects with what we had in house.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PREV / NEXT ========================================================= -->
+<section class="wrap" style="padding-bottom: 72px;">
+    <div class="pager">
+        <a class="next prev" href="/experience/h3x/">
+            <div>
+                <span class="mono" style="color: var(--muted);">Newer</span>
+                <h3>H3X Technologies</h3>
+            </div>
+            <span class="arrow">←</span>
+        </a>
+        <a class="next " href="/experience/boron/">
+            <div>
+                <span class="mono" style="color: var(--muted);">Older</span>
+                <h3>Boron Energy</h3>
+            </div>
+            <span class="arrow">→</span>
+        </a>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/aboutme/">About</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>

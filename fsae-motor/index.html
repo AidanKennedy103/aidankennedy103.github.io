@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Design — Aidan Kennedy</title>
+    <meta name="description" content="An in-progress design of custom spoke-type permanent magnet motors for a 4WD Formula SAE car.">
+    <meta property="og:image" content="https://aidankennedyengineering.com/fsae-motor/images/07-reduced-stator-model.png">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+
+<!--
+    HOW TO ADD IMAGES
+    1. Drop image files into fsae-motor/images/.
+    2. Add a figure like this:
+
+        <figure class="fig">
+            <button type="button"><img src="images/your-image.jpg" alt="Describe the image" loading="lazy"></button>
+            <figcaption><span class="mono">Fig 1</span>Caption text</figcaption>
+        </figure>
+
+    Wrap two figures in <div class="figs two"> (or three in <div class="figs three">) to put them side by side.
+-->
+
+<!-- HERO ================================================================ -->
+<section class="case-hero">
+    <div class="wrap">
+        <a class="back mono" href="/#work">← All projects</a><br>
+        <span class="eyebrow mono">Project 01 · Formula SAE</span><span class="badge">In progress</span>
+        <h1>Motor Design (In Progress)</h1>
+        <p class="lede">Custom spoke-type permanent magnet motors for a 4WD FSAE car, with 16kW continuous front hub motors and 33kW continuous rear inboard motors. Sized from vehicle-level torque and speed requirements and validated in Ansys Maxwell, where the first front motor design delivered 11.4Nm at 25A RMS against a 10.9Nm continuous target.</p>
+
+        <dl class="specs">
+            <div><dt class="mono">Front motors</dt><dd>16<small>kW cont. / 26 peak</small></dd></div>
+            <div><dt class="mono">Rear motors</dt><dd>33<small>kW cont. / 53 peak</small></dd></div>
+            <div><dt class="mono">Front torque target</dt><dd>10.9<small>N·m cont.</small></dd></div>
+            <div><dt class="mono">Front torque (sim)</dt><dd>11.4<small>N·m @ 25 A RMS</small></dd></div>
+            <div><dt class="mono">Status</dt><dd style="font-size: 1.15rem;">Design phase</dd></div>
+        </dl>
+    </div>
+</section>
+
+<section class="wrap">
+
+    <!-- 01 GOALS ======================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">01</span>
+            <h2>Goals &amp; requirements</h2>
+        </div>
+        <div>
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Approach</h3>
+                    <p>Most student designs fail because the scope is too large or they never get finished, not because of the technical ability of the team. With that in mind, I set out to design a functional motor rather than a perfect one. I made a lot of assumptions and placed constraints on the design that may not be optimal, but they let me prioritize progress over perfection. The competition makes the requirements fairly clear: an 80kW combined power limit and a maximum 600V DC bus. On top of that, I added some team constraints. The motors had to be compatible with our existing gearboxes, the front and rear motors needed to be as similar as possible, and manufacturing should be simplified wherever possible (no carbon wrapped rotors!). I also sized the motors for full power capability rather than our current pack, so the motors won't be the limiting factor in the future.</p>
+                </div>
+                <div class="figs">
+                    <figure class="fig">
+                        <button type="button"><img src="images/01b-chassis-power-split-labelled.png" alt="Top-down line drawing of the FSAE chassis with each front wheel labelled 16kW and each rear wheel labelled 33kW" loading="lazy" width="1650" height="1160"></button>
+                        <figcaption><span class="mono">Fig 1</span>Chassis layout with the front / rear power split</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Front and rear power split</h3>
+                    <p>Putting a motor at each wheel gives us full torque vectoring capability. The main drawback is unsprung mass, since the motor and gearbox sit on the wheel side of the suspension. Because the front wheels need to steer and the driver sits between them, it's very difficult to get the front motors onto the sprung side of the car. The rear motors, however, can fairly easily be placed inboard. By shifting power (and therefore mass) to the rear inboard motors, we can drastically reduce the car's unsprung mass. This also puts more power at the rear tires, which have the most traction under acceleration. I chose a ⅔ rear to ⅓ front split based on the team's understanding of vehicle dynamics, what other teams have done, and advice from FSAE alumni. Optimizing this split would need a validated vehicle model that accounts for unsprung mass, which we don't have yet, so it was kept out of scope. This gave a front motor sized at 16kW continuous / 26kW peak and a rear motor at 33kW continuous / 53kW peak.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02 ELECTROMAGNETIC DESIGN ======================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">02</span>
+            <h2>Electromagnetic design</h2>
+        </div>
+        <div>
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Rotor configuration</h3>
+                    <p>I looked at three rotor configurations. Surface permanent magnet (SPM) rotors allow a very small air gap and suit high speed applications. Interior permanent magnet (IPM) rotors let you tune the motor so its best efficiency point lines up with your most common operating point. Spoke rotors direct magnet flux tangentially instead of radially, which gives extremely high flux density and torque density. Efficiency matters less for competition scoring than raw performance, so the IPM's main advantage didn't buy us much. The rear motor has high torque and low speed requirements, which made it a natural fit for a spoke rotor. The front motor would suit an SPM, but I designed it as a spoke too, to keep the design problem simpler. The tradeoff is higher back EMF, which limits top speed, but the front motor only needs to reach roughly 20,000RPM, which is achievable with this layout.</p>
+                </div>
+                <div class="figs three">
+                    <figure class="fig">
+                        <button type="button"><img src="images/02a-rotor-SPM-light.png" alt="Cross-section diagram of a surface permanent magnet rotor, with magnets mounted on the rotor's outer surface" loading="lazy" width="1472" height="1120"></button>
+                        <figcaption><span class="mono">Fig 2</span>Surface PM (SPM) rotor</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <button type="button"><img src="images/02b-rotor-IPM-light.png" alt="Cross-section diagram of an interior permanent magnet rotor, with pairs of magnets buried inside the rotor in V shapes" loading="lazy" width="1472" height="1120"></button>
+                        <figcaption><span class="mono">Fig 3</span>Interior PM (IPM) rotor</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <button type="button"><img src="images/02c-rotor-spoke-light.png" alt="Cross-section diagram of a spoke rotor, with rectangular magnets arranged radially like wheel spokes" loading="lazy" width="1472" height="1120"></button>
+                        <figcaption><span class="mono">Fig 4</span>Spoke rotor</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="figs">
+                    <figure class="fig small">
+                        <button type="button"><img src="images/03-pole-selection-tables.png" alt="Two tables of pole pair count against maximum synchronous speed for the rear and front motors, colour-coded red, yellow and green; 10 pole pairs (9,000RPM) is green for the rear and 5 pole pairs (24,000RPM) is green for the front" loading="lazy" width="1050" height="1430"></button>
+                        <figcaption><span class="mono">Fig 5</span>Pole pair selection for the rear and front motors</figcaption>
+                    </figure>
+                </div>
+                <div class="prose" style="margin-top: 32px;">
+                    <h3>Pole and slot selection</h3>
+                    <p>Since I designed around an off-the-shelf inverter and our existing gearboxes, pole selection was fairly simple. Top speed is set by the maximum electrical frequency the inverter can produce (n = 120f / p). I took our simulated maximum speed at competition (~120km/h), worked it back through the gear ratios to a motor RPM, and calculated the maximum synchronous speed for a range of pole pair counts. That landed on 5 pole pairs for the front motor (24,000RPM max) and 10 pole pairs for the rear motor (9,000RPM max). A nice side effect is that both motors run at the same electrical frequency at their respective speed targets (~1167Hz at 14,000RPM front and 7,000RPM rear). The front gearbox is 14.33:1 and the rear is 4.24:1, so the ratios don't line up perfectly, but reaching top speed is a rare edge case and the small difference isn't a concern. For the front motor I chose a 10 pole, 12 slot combination with concentrated windings. It's a very torque-dense combination, but it has a lot of subharmonics, which add to rotor heating. Our events don't have many extended high power draws, and several other FSAE teams that build their own motors run this combination without issues, so I was comfortable moving forward with it.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Sizing and windings</h3>
+                    <p>From the vehicle requirements I built a spreadsheet for each motor to calculate torque, speed, inverter voltages and currents, air gap flux density, and windings. The front motor needs 10.9Nm continuous and 17.5Nm peak, with a flux weakening point at 14,000RPM. It has a 96mm OD, a 60mm stack length, a 0.6mm air gap, and an estimated average air gap flux density of 0.93T. Choosing the number of turns is a balancing act. More turns means more flux and more torque, but it also means more back EMF at a given speed, which pushes the flux weakening point lower. I calculated the turns needed to meet the torque requirement and the turns needed to hit our bus voltage at the flux weakening point. These came out to ~16 and ~13 turns. I wasn't willing to sacrifice peak torque, so I started my simulations at 16 turns. That way I wasn't guessing at the windings, and if the simulation agreed with the hand calcs I could be much more confident in both.</p>
+                </div>
+                <div class="figs">
+                    <figure class="fig">
+                        <button type="button"><img src="images/10-front-motor-performance-charts.png" alt="Three front motor charts: torque vs RPM, wheel torque vs km/h, and target performance characteristics, each showing continuous and maximum torque curves that stay flat and then fall off above the flux weakening point" loading="lazy" width="1790" height="317"></button>
+                        <figcaption><span class="mono">Fig 6</span>Front motor: torque vs RPM, wheel torque vs km/h, and target performance</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <button type="button"><img src="images/12-rear-motor-performance-charts.png" alt="Three rear motor charts: torque vs RPM, wheel torque vs km/h, and target performance characteristics, each showing continuous and maximum torque curves that stay flat and then fall off above the flux weakening point" loading="lazy" width="1763" height="342"></button>
+                        <figcaption><span class="mono">Fig 7</span>Rear motor: torque vs RPM, wheel torque vs km/h, and target performance</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="figs">
+                    <figure class="fig">
+                        <button type="button"><img src="images/04-first-spoke-model-flux-lines.png" alt="First 2D spoke motor model in Ansys Maxwell, showing the stator slots, the ring of rotor magnets and the flux lines around them" loading="lazy" width="1462" height="1127"></button>
+                        <figcaption><span class="mono">Fig 8</span>First 2D spoke model in Maxwell, with flux lines</figcaption>
+                    </figure>
+                </div>
+                <div class="prose" style="margin-top: 32px;">
+                    <h3>Electromagnetic simulation</h3>
+                    <p>I'm validating the design in Ansys Maxwell 2D. I started with a simple back EMF study: no current applied, just spinning the rotor. This let me learn the motor and flux layout and get comfortable with the software. The first results looked nice, but they weren't real. The tutorial I followed didn't set the correct magnet and coil directions for my layout, so I went back to the textbook winding layout, drew it out on paper, and corrected the coil polarities and magnet orientations. Once the flux linkage plots came out as clean sine waves, I knew the model was set up correctly. From there I reduced the stator size based on my current and copper area calculations.</p>
+                </div>
+                <div class="figs" style="margin-top: 32px;">
+                    <figure class="fig">
+                        <button type="button"><img src="images/05-line-line-back-emf.png" alt="Ansys plot of the three line-to-line back EMF waveforms from the corrected model, three clean, evenly phase-shifted sine waves" loading="lazy" width="2048" height="807"></button>
+                        <figcaption><span class="mono">Fig 9</span>Line-to-line back EMF from the corrected model</figcaption>
+                    </figure>
+                </div>
+                <div class="figs two" style="margin-top: 18px;">
+                    <figure class="fig">
+                        <button type="button"><img src="images/06-flux-density.png" alt="Flux density contour plot of the motor cross-section, colour-mapped in mTesla" loading="lazy" width="1750" height="1127"></button>
+                        <figcaption><span class="mono">Fig 10</span>Flux density (mTesla)</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <button type="button"><img src="images/07-reduced-stator-model.png" alt="Updated Maxwell model with a reduced stator: 12 stator slots and a 10-magnet spoke rotor with alternating magnet polarity" loading="lazy" width="1537" height="1100"></button>
+                        <figcaption><span class="mono">Fig 11</span>Updated model with the reduced stator</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Driving the motor</h3>
+                    <p>Next, I fed the motor current. I tried coupling Maxwell to an inverter model in a co-simulation, but I had trouble getting the load to draw more current, so I've set that aside for now. Instead I drove the model directly with sinusoidal phase currents. At 25A RMS and 14,000RPM (the flux weakening point), the front motor produces about 11.4Nm with fairly low torque ripple. That beats the 10.9Nm continuous target, and it's a good sign that the hand calculations and the simulation agree.</p>
+                </div>
+                <div class="figs">
+                    <figure class="fig">
+                        <button type="button"><img src="images/09-torque-11Nm-at-25A.png" alt="Ansys torque plot over 2ms at 25A RMS showing a steady torque of about 11.4Nm with small ripple" loading="lazy" width="2048" height="1044"></button>
+                        <figcaption><span class="mono">Fig 12</span>Torque at 25A RMS, about 11.4Nm</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 03 THERMAL & MECHANICAL ========================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">03</span>
+            <h2>Thermal &amp; mechanical</h2>
+        </div>
+        <div class="prose">
+            <h3>Mechanical design considerations</h3>
+            <p>The mechanical side is where much of the risk is. Getting the air gap as small as possible improves performance, but any contact between the rotor and stator destroys the motor. That means building a thorough tolerance stack for the air gap at MMC/LMC, full load deflection, and peak temperature. I've chosen angular contact bearings in a back-to-back configuration. They are preloaded and very rigid, which tightens the shaft's radial position and lets me shrink the air gap stackup. The bearings will be ceramic hybrids. Circulating currents in a motor try to pass through the bearings, and arcing between steel rolling elements and races eventually causes bearing failure. The output end will be fixed to reduce moments on the shaft, and the inner end will float on an O-ring and wave spring to allow for thermal expansion.</p>
+        </div>
+    </div>
+
+    <!-- 04 MANUFACTURING & TEST ========================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">04</span>
+            <h2>Manufacturing &amp; test</h2>
+        </div>
+        <div class="prose">
+            <p>Not started yet. See the progress log below for what's next.</p>
+        </div>
+    </div>
+
+    <!-- 05 PROGRESS LOG ================================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">05</span>
+            <h2>Progress log</h2>
+        </div>
+        <div class="prose">
+            <!-- Newest first. Copy an <li> block for each update. -->
+            <ul class="log">
+                <li>
+                    <time class="mono" datetime="2026-10">Oct 2026</time>
+                    <h3>Next steps</h3>
+                    <p>This project is still in progress. The next steps are:</p>
+                    <ul>
+                        <li>Finalize the slot/pole combination for the rear motor</li>
+                        <li>Optimize the front motor geometry</li>
+                        <li>Run modal and rotor dynamics analysis</li>
+                        <li>Design the cooling and housing (metal 3D printed housings are a strong option, since a motor's power rating is really a measure of how well it can be cooled)</li>
+                        <li>Work out how to retain the laminations on the rotor and stator</li>
+                        <li>Complete the full air gap tolerance stack</li>
+                    </ul>
+                    <p>I'll keep updating this page as the design progresses.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- NEXT ================================================================ -->
+<section class="wrap" style="padding-bottom: 72px;">
+    <a class="next" href="/project1/">
+        <div>
+            <span class="mono" style="color: var(--muted);">Next project · 02</span>
+            <h3>Battery Pack Cooling System</h3>
+        </div>
+        <span class="arrow">→</span>
+    </a>
+</section>
+
+</main>
+
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/aboutme/">About</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>

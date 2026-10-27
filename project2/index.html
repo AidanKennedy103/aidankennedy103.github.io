@@ -3,142 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Drivetrain Liquid Cooling Loop — Aidan Kennedy</title>
+    <meta name="description" content="Design, sizing and validation of the liquid cooling loop for the UBC Formula Electric drivetrain.">
+    <meta property="og:image" content="https://aidankennedyengineering.com/project2/FullTopend.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
 
-<!-- HEADER BUTTONS ==================================== -->
-<div class="head-button-left-container">
-    <a class="head-button head-button-left" href="/">Home</a>
-</div>
-
-<!-- HEADER  =========================================== -->
-<header>
-    <h1>Cooling Loop Design</h1>
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+    </div>
 </header>
 
-<!-- PROJECT PHOTO AND TEXT  ================================= -->
+<main>
 
-<div class="grid-container">
+<!-- HERO ================================================================ -->
+<section class="case-hero">
+    <div class="wrap">
+        <a class="back mono" href="/#work">← All projects</a><br>
+        <span class="eyebrow mono">Project 03 · UBC Formula Electric</span>
+        <h1>Drivetrain Liquid Cooling Loop</h1>
+        <p class="lede">A liquid cooling system that removes an average of 806&nbsp;W from a student FSAE car. It is tuned to hold component temperatures between 30 and 60&nbsp;°C on an 80&nbsp;kW peak drivetrain through the full Endurance event.</p>
 
-    <div class="grid-item">
-        <div class="text1">In our competition the most thermally challenging event is "Endurance". 
-            This event is a 22km drive with a driver change halfway through the event. Keeping the motors 
-            and power electronics cool in the high ambient temperatures of Michigan while keeping the mass of the 
-            cooling system low is a large challenge. The component layout was driven by the fact that the inverters
-            need a large flow rate of 8-10L/min and the motors can exceed 30PSI. The motors were placed in parallel 
-            to equalize the temperature between them so we wouldn't run into long term performance differences between
-            the left and right side.
+        <dl class="specs">
+            <div><dt class="mono">Average heat load</dt><dd>806<small>W</small></dd></div>
+            <div><dt class="mono">Peak drivetrain</dt><dd>80<small>kW</small></dd></div>
+            <div><dt class="mono">Target temp</dt><dd>30–60<small>°C</small></dd></div>
+            <div><dt class="mono">Design flow</dt><dd>~15<small>L/min</small></dd></div>
+            <div><dt class="mono">Pump head</dt><dd>36.6<small>psi</small></dd></div>
+        </dl>
+
+        <figure class="frame case-cover">
+            <img src="FullTopend.jpg" alt="CAD render of the rear of the car showing motors, inverters, radiator and fans" width="1782" height="1052">
+            <figcaption class="mono"><span>Rear top-level assembly</span><span>Motors · Inverters · Radiator</span></figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="wrap">
+
+    <!-- 01 LAYOUT ======================================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">01</span>
+            <h2>Requirements &amp; layout</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>The most thermally demanding event at competition is <strong>Endurance</strong>: a 22&nbsp;km drive with a driver change halfway. The challenge is keeping the motors and power electronics cool in Michigan's high ambient temperatures while keeping the cooling system light.</p>
+                <p>Two constraints set the component layout: the inverters need a high flow rate of 8–10&nbsp;L/min, and the motors must not exceed 30&nbsp;psi. I placed the motors in parallel to equalize their temperatures, so the left and right sides wouldn't drift apart in performance over time.</p>
+            </div>
+            <div class="figs" style="margin-top: 32px;">
+                <figure class="fig">
+                    <button type="button"><img src="Cooling%20Loop%20Parallel%20Layout.jpg" alt="Cooling loop schematic with motors in parallel" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 1</span>Cooling loop layout with the motors in parallel</figcaption>
+                </figure>
+            </div>
+            <div class="figs two" style="margin-top: 18px;">
+                <figure class="fig">
+                    <button type="button"><img src="EmraxReq.jpg" alt="Emrax motor cooling requirements" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 2</span>Emrax motor cooling requirements</figcaption>
+                </figure>
+                <figure class="fig">
+                    <button type="button"><img src="InverterReq.png" alt="Inverter cooling requirements" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 3</span>Inverter cooling requirements</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 
-    <div class="grid-item">
-        <img src="Cooling Loop Parallel Layout.jpg" alt="Cooling Loop Parallel Layout">
-    </div>
-
-    <div class="grid-item">
-        <img src="EmraxReq.jpg" alt="Emrax Requirements">
-    </div>
-
-    <div class="grid-item">
-        <img src="InverterReq.png" alt="Inverter Requirements">
-    </div>
-
-    <div class="grid-item">
-        <div class="text1">To analyze the thermals of the vehicle and select a radiator I used the Speed/Torque 
-            profile from the teams lap simulation. I overlayed this with the motor and inverter efficiency data 
-            to generate a graph of the amount of heat generated over a lap.
-        </div> 
-    </div>
-
-    <div class="grid-item">
-        <img src="HeatGen.jpg" alt="Heat Generation">
-    </div>
-
-    <div class="grid-item">
-        <div class="text1">I sourced a radiator which seemed to fit our system. Unfortunately the radiators
-            we have to choose from had very poor data. Therefore, I decided to do in-house testing on our radiator
-            at our universities wind tunnel. I did this with a small group for a class project, and found the minimum 
-            windspeed required to keep the components cooled. Which allowed me to design a shroud around the radiator 
-            and size fans to pull air through the system.
+    <!-- 02 HEAT GENERATION ============================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">02</span>
+            <h2>Heat generation</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>To analyze the vehicle's thermals and select a radiator, I took the speed/torque profile from the team's lap simulation and overlaid it with motor and inverter efficiency data. The result is the heat generated over a full lap.</p>
+            </div>
+            <div class="figs">
+                <figure class="fig">
+                    <button type="button"><img src="HeatGen.jpg" alt="Graph of heat generated in watts over time during an endurance lap" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 4</span>Heat generated over one Endurance lap</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 
-    <div class="grid-item">
-        <img src="ThreeTrials.jpg" alt="Three Trials">
-    </div>
-
-    <div class="grid-item">
-        <img src="Screenshot 2023-05-21 021937.png">
-    </div>
-
-    <div class="grid-item">
-        <div class="text1">Once we had chosen all the components in our system we were able to source a pump that would 
-            match all of the criteria that we had set out. This turned out to be very difficult because our LV rail runs at 24V 
-            which is not the norm for small BLDC pumps. The best pump I was able to source was an underwater pump which meant it
-            needed to be submerged in a reservoir. The rules of our competition demand that we have a "catch can" to account for thermal 
-            expansion in our system. This actually played into our favour as I was able to argue that our reservoir also acted as 
-            a catch can which meant we no longer had to seperately design a catch can.
+    <!-- 03 RADIATOR ===================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">03</span>
+            <h2>Radiator testing</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>I sourced a radiator that looked like a good fit, but the data available for the radiators we could choose from was very poor. So I tested ours in-house in the university's <strong>wind tunnel</strong>, with a small group as a class project. We found the minimum wind speed needed to keep the components cool, which let me design a shroud around the radiator and size fans to pull air through it.</p>
+            </div>
+            <div class="figs">
+                <figure class="fig">
+                    <button type="button"><img src="ThreeTrials.jpg" alt="Wind tunnel radiator test results across three trials" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 5</span>Wind tunnel results across three trials</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 
+    <!-- 04 PUMP ========================================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">04</span>
+            <h2>Pump &amp; reservoir</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>With the other components chosen, I needed a pump that met every criterion we had set. That was hard because our low-voltage rail runs at 24&nbsp;V, which is unusual for small BLDC pumps. The best option I found was a submersible pump, so it had to sit inside a reservoir.</p>
+                <p>Competition rules require a catch can to absorb thermal expansion. That worked in our favour: I made the case that the reservoir also served as the catch can, so we didn't need to design a separate one.</p>
+            </div>
+            <div class="figs" style="margin-top: 32px;">
+                <figure class="fig">
+                    <button type="button"><img src="Screenshot%202023-05-21%20021937.png" alt="CAD render of the reservoir with the submersible pump inside" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 6</span>Reservoir with the submersible pump inside</figcaption>
+                </figure>
+            </div>
 
-
-    <div class="grid-item">
-        <div class="text1">The total Pressure drop before motors = 11.6PSI. We will run with the motors at approximately 25 PSI to ensure we do not 
-            damage them through over pressure. Therefore the pump must generate approx 36.6 PSI which translates to 84.44532777367279 ft of head. 
-            Comparing this to the pump I chose we should get approximately 15 LPM of flow which will be more than enough for our system. 
-            Even with more minor losses in our fittings and hoses. The pump we chose is also driven off a physical potentiometer meaning we can tun 
-            the system to find the "sweet spot" and get the exact flow rate we want.
+            <div class="prose" style="margin-top: 40px;">
+                <p>The total pressure drop before the motors is <strong>11.6&nbsp;psi</strong>. We run the motors at about 25&nbsp;psi so they are never over-pressured, so the pump has to supply about <strong>36.6&nbsp;psi, or roughly 84&nbsp;ft of head</strong>. On the chosen pump's curve that gives about <strong>15&nbsp;L/min</strong>, which leaves plenty of margin for minor losses in the fittings and hoses. The pump is also set by a physical potentiometer, so we can tune the system to the exact flow rate we want.</p>
+            </div>
+            <div class="figs" style="margin-top: 32px;">
+                <figure class="fig">
+                    <button type="button"><img src="PressureCalcs.jpg" alt="Table of pressure drops across motors, inverters and radiator" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 7</span>Component pressure drops and constraints</figcaption>
+                </figure>
+            </div>
+            <div class="figs" style="margin-top: 18px;">
+                <figure class="fig">
+                    <button type="button"><img src="PumpCurve.jpg" alt="Pump curve with the operating point" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 8</span>Pump curve and operating point</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 
-    <div class="grid-item">
-        <img src="PumpCurve.jpg" alt="Pump Curve">
-    </div>
-
-    <div class="grid-item">
-        <img src="ThermalMass.jpg" alt="Thermal Mass">
-    </div>
-
-    <div class="grid-item">
-        <div class="text1">To validate our simulation we had to test our system. This is temperature data from autcross lap tests. 
-            We planned to do endurance testing but were unable to gather the necessary data and decided to validate through an 
-            autocross lap on a cold track day. We compared the thermal generation to the temperature changes to find the thermal 
-            mass of all of the components in our system.
+    <!-- 05 VALIDATION =================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">05</span>
+            <h2>Validation</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>To validate the simulation, we had to test the system. We had planned endurance testing but couldn't gather the data we needed, so we validated with an autocross lap on a cold track day instead. Comparing heat generated with the measured temperature changes gave us the <strong>thermal mass</strong> of every component in the system.</p>
+                <p>From there we could plot each component's temperature and confirm that none ever exceeds its maximum, so the car can finish Endurance.</p>
+            </div>
+            <div class="figs two">
+                <figure class="fig">
+                    <button type="button"><img src="ThermalMass.jpg" alt="Autocross lap temperature data used to find thermal mass" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 9</span>Autocross temperature data used to find thermal mass</figcaption>
+                </figure>
+                <figure class="fig">
+                    <button type="button"><img src="EmraxTemp.png" alt="Predicted Emrax motor temperature over Endurance" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 10</span>Predicted motor temperature over Endurance</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 
-    <div class="grid-item">
-        <div class="text1">This allowed us to actually graph the temperatures of our components and make sure that at no point
-            a component spiked above it's maximum temperature to ensure we could succesfully complete our endurance event!
+    <!-- 06 FINAL DESIGN ================================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">06</span>
+            <h2>Final design</h2>
+        </div>
+        <div>
+            <div class="figs two">
+                <figure class="fig">
+                    <button type="button"><img src="Reservoir.jpg" alt="Reservoir CAD render" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 11</span>Reservoir</figcaption>
+                </figure>
+                <figure class="fig">
+                    <button type="button"><img src="Screenshot%202023-05-21%20022151.png" alt="Section view of the reservoir and pump" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 12</span>Reservoir section view</figcaption>
+                </figure>
+            </div>
+            <div class="figs" style="margin-top: 18px;">
+                <figure class="fig">
+                    <button type="button"><img src="Topend.jpg" alt="Cooling system top-level assembly" loading="lazy"></button>
+                    <figcaption><span class="mono">Fig 13</span>Cooling system top-level assembly</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
+</section>
 
+<!-- NEXT ================================================================ -->
+<section class="wrap" style="padding-bottom: 72px;">
+    <a class="next" href="/project3/MECH%20223%20Final%20Report.pdf" target="_blank" rel="noopener">
+        <div>
+            <span class="mono" style="color: var(--muted);">Next project · 04</span>
+            <h3>Launcher &amp; Lander Vehicle (PDF)</h3>
+        </div>
+        <span class="arrow">→</span>
+    </a>
+</section>
 
-    <div class="grid-item">
-        <img src="EmraxTemp.png" alt="Emrax Temperature">
+</main>
+
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/aboutme/">About</a>
+        </nav>
     </div>
+</footer>
 
-    <div class="grid-item">
-        <img src="Reservoir.jpg" alt="Reservoir">
-    </div>
-
-    <div class="grid-item">
-        <img src="Topend.jpg" alt="Topend">
-    </div>
-
-    <div class="grid-item">
-        <img src="FullTopend.jpg" alt="FullTopend">
-    </div>
-
-
-    <div class="grid-item">
-        <img src="Screenshot 2023-05-21 022151.png">
-    </div>
-
-</div>
-
+<script src="/site.js"></script>
 </body>
 </html>
