@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Park Vancouver — Aidan Kennedy</title>
+    <meta name="description" content="A crowdsourced iPhone web app that maps free parking in Vancouver, built with City open data and AI coding tools.">
+    <meta property="og:image" content="https://aidankennedyengineering.com/free-park/images/00-cover.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315171b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' fill='%23f5f4f0' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<!-- NAV ================================================================= -->
+<header class="nav">
+    <div class="wrap">
+        <a class="brand" href="/"><span class="brand-mark">AK</span><span class="brand-name">Aidan Kennedy</span></a>
+        <ul class="nav-links">
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li class="hide-sm"><a href="/aboutme/">About</a></li>
+            <li class="hide-sm"><a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="nav-cta" href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+
+<!-- HERO ================================================================ -->
+<section class="case-hero">
+    <div class="wrap">
+        <a class="back mono" href="/#work">← All projects</a><br>
+        <span class="eyebrow mono">Project 06 · Personal project</span>
+        <h1>Free Park Vancouver</h1>
+        <p class="lede">A crowdsourced map of free parking in Vancouver. It runs as an iPhone web app and combines City open data with reports from the people using it.</p>
+
+        <div class="note" style="margin-top: 28px;">
+            <span class="note-icon">i</span>
+            <div>
+                <h3>A note before you read on</h3>
+                <p>I'm not a software engineer, and I used AI to do most of the coding for this app. I don't want to misrepresent my software skills. What this project does show is how I solve problems: I recognised a real problem and solved it with the tools I had. I had never made an app before, and I wasn't put off by that. I can solve problems creatively and work hard in very different environments, and this is one example.</p>
+            </div>
+        </div>
+
+        <dl class="specs">
+            <div><dt class="mono">Blocks mapped</dt><dd>~9,400<small>tappable</small></dd></div>
+            <div><dt class="mono">Tickets analysed</dt><dd>2.4M<small>City records</small></dd></div>
+            <div><dt class="mono">Running cost</dt><dd>$0<small>friends beta</small></dd></div>
+        </dl>
+
+        <div class="btn-row" style="margin-top: 28px;">
+            <a class="btn" href="https://free-park.aidank103.workers.dev" target="_blank" rel="noopener">Try the app <span class="arrow">→</span></a>
+        </div>
+    </div>
+</section>
+
+<section class="wrap">
+
+    <!-- 01 PROBLEM ====================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">01</span>
+            <h2>The problem</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>Parking in Vancouver is expensive and confusing. There's plenty of free parking, like neighbourhood streets and "2 hr" blocks, but no app shows it. The rules are spread across thousands of signs, permit zones and meter schedules, and many of them change with the time of day.</p>
+                <p>I wanted one map that answers a simple question: <strong>where can I park for free right now, and for how long?</strong></p>
+            </div>
+            <div class="figs">
+                <figure class="fig small">
+                    <button type="button"><img src="images/00-cover.jpg" alt="Three iPhone screens from the app: a list of nearby free parking with a multi-stop route, the main map with green free streets around Dunbar Street, and a card asking whether a block is normal street parking" loading="lazy" width="1200" height="800"></button>
+                    <figcaption><span class="mono">Fig 1</span>The app on iPhone: nearby spots, the map, and a block card</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02 WHAT I BUILT ================================================= -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">02</span>
+            <h2>What I built</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <ul>
+                    <li><strong>Feels like an iPhone app.</strong> It installs from Safari with no App Store, and has an Apple Maps–style sheet, dark mode and offline support.</li>
+                    <li><strong>"Find free parking near me."</strong> It lists the closest options and labels each one as a 2-hour sign, a neighbourhood street, a meter that's free tonight, and so on. It can plan one Google Maps route past several spots, so if the first one is full you just keep driving. A small filter narrows the map and the list to one kind of parking or a minimum stay.</li>
+                    <li><strong>Crowdsourced.</strong> People add spots, confirm or correct blocks, and report how many spaces are free right now. Reports expire after an hour, and only people within 500&nbsp;m can confirm a block.</li>
+                    <li><strong>Time-aware.</strong> A "No parking 8am–10pm" block shows as closed during the day and counts down to when it opens. Meters turn green while they're free overnight. Free evening spots say when the free period ends.</li>
+                    <li><strong>Every block is its own piece.</strong> You can tap any block, choose which side of the street has parking, and drag the ends of the line to match the signs.</li>
+                    <li><strong>The extras drivers asked for:</strong> parkades with operators, rates and estimated sizes, permit zones, SkyTrain, accessible spots, an Evo car-share mode, and UBC and University Endowment Lands parking.</li>
+                </ul>
+            </div>
+            <div class="figs two" style="grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 560px;">
+                <figure class="fig">
+                    <button type="button"><img src="images/02-near-me.jpg" alt="Near-me screen: numbered spots on the map joined by a dashed route, a Drive past several spots box with 3, 4 or 5 stops and a Start route in Google Maps button, and the first result labelled 1 hr" loading="lazy" width="786" height="1704"></button>
+                    <figcaption><span class="mono">Fig 2</span>Near me: the closest spots, each labelled with its type, and one route past several of them</figcaption>
+                </figure>
+                <figure class="fig">
+                    <button type="button"><img src="images/03-block-card.jpg" alt="A block card for 3500 W 19th Ave marked Street, not checked yet, asking Is this normal street parking? with Yes, No parking and Something else: there's a sign" loading="lazy" width="786" height="1704"></button>
+                    <figcaption><span class="mono">Fig 3</span>Confirming a neighbourhood block takes one tap</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- 03 APPROACH ===================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">03</span>
+            <h2>How I approached it</h2>
+        </div>
+        <div>
+            <div class="prose">
+                <p>I treated the AI like a fast engineer on my team. I decided what to build and in what order, described how it should behave, and judged every result on a real phone. Most of my time went into product decisions and testing, not typing code.</p>
+                <ul>
+                    <li><strong>Start with real data.</strong> The City of Vancouver publishes meters, streets and years of parking tickets. A block with many "parked longer than the sign allows" tickets but no meters almost certainly has free time-limited parking. That became the first layer of suggestions.</li>
+                    <li><strong>Find better sources when the obvious ones fall short.</strong> Permit zones weren't in the open-data catalogue, but the City's public map server had them. UBC's parking site had official rates and pay-zone numbers behind its map.</li>
+                    <li><strong>Ship small, test on the phone, adjust.</strong> I used the app after every change and kept a list of what felt wrong. Each note became the next round of work.</li>
+                    <li><strong>Keep it cheap and simple.</strong> A static web app on free hosting, a free database tier, and no app store fees.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04 PROBLEMS ===================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">04</span>
+            <h2>Problems I solved</h2>
+        </div>
+        <div>
+            <div class="subsection">
+                <div class="prose">
+                    <h3>The map was too busy</h3>
+                    <p>Thousands of "probably free" streets cluttered the screen. Unconfirmed streets are now faint and only light up within 500&nbsp;m of you or your search. Zoomed out, each street is one simple line; zoomed in, it splits into each side of the street.</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <div class="prose">
+                    <h3>City data didn't match real blocks</h3>
+                    <p>Some City street records covered several blocks, and some blocks had house numbers that jump partway along (like "3600–3700 W 21st Ave") with no cross street in between. That left stacked or split lines on the map. I checked every block in the city for overlaps and splits, then merged or divided them so each real block is drawn exactly once.</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Lines that match the street</h3>
+                    <p>Hand-drawn lines rarely lined up with the road. New lines now follow the street itself, curves included, sit on the correct curb, and stop at intersections. Each side of the street has its own drag handles, so one side can be shorter than the other, and you can drag past a corner to cover the next block too.</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <div class="prose">
+                    <h3>Trusting what people add</h3>
+                    <p>Anyone can add information, so the app counts votes, lets people change their answer, and only accepts confirmations from people who are actually nearby. Each report also has an anonymous device ID, ready for a future points system that rewards good contributions.</p>
+                </div>
+            </div>
+            <div class="figs two" style="grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 560px;">
+                <figure class="fig">
+                    <button type="button"><img src="images/01-map.jpg" alt="Light-mode map around Dunbar Street: confirmed free streets in solid green, unchecked neighbourhood streets as faint blue lines, and numbered clusters of user-added spots" loading="lazy" width="786" height="1704"></button>
+                    <figcaption><span class="mono">Fig 4</span>Confirmed blocks in green; unchecked streets stay faint until you're close</figcaption>
+                </figure>
+                <figure class="fig">
+                    <button type="button"><img src="images/05-dark.jpg" alt="Dark-mode map of Kitsilano with clusters of meters in blue, paid and time-limited streets in orange and red, and suspected free blocks as dashed white lines" loading="lazy" width="786" height="1704"></button>
+                    <figcaption><span class="mono">Fig 5</span>Dark mode in Kitsilano: meter clusters, signed blocks and suggested free blocks</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- 05 LEARNED ====================================================== -->
+    <div class="chapter">
+        <div class="chapter-label">
+            <span class="step mono">05</span>
+            <h2>What I learned</h2>
+        </div>
+        <div class="prose">
+            <p>You don't need to be an expert in every tool to build something useful. You need to understand the problem well, ask good questions, test honestly, and keep going when the first version isn't good enough. I'm proud of the problem solving, persistence and judgement in this project, and I bring the same approach to any team I work with.</p>
+            <p class="fine" style="color: var(--muted); font-size: 0.9rem;">Data: City of Vancouver Open Data, OpenStreetMap contributors, UBC Parking and the University Endowment Lands. Built with AI coding tools (Claude).</p>
+        </div>
+    </div>
+</section>
+
+<!-- NEXT ================================================================ -->
+<section class="wrap" style="padding-bottom: 72px;">
+    <a class="next" href="/fsae-motor/">
+        <div>
+            <span class="mono" style="color: var(--muted);">Next project · 01</span>
+            <h3>Motor Design</h3>
+        </div>
+        <span class="arrow">→</span>
+    </a>
+</section>
+
+</main>
+
+<!-- FOOTER ============================================================== -->
+<footer class="footer">
+    <div class="wrap">
+        <div>
+            <h2>Let's build something.</h2>
+            <span class="mono">© <span data-year>2026</span> Aidan Kennedy</span>
+        </div>
+        <nav class="footer-links">
+            <a href="https://www.linkedin.com/in/aidankennedyengineering/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="/Resume/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/aboutme/">About</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>
